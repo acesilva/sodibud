@@ -30,6 +30,8 @@ button{font:inherit;cursor:pointer}
 .prod b{display:block;font-size:14px}
 .price{font-weight:800;font-size:16px;color:var(--orange)}
 .small{font-size:12px;color:var(--muted)}
+.acts{display:flex;gap:6px;margin-top:8px}
+.btn.sm{padding:7px 10px;font-size:12px}
 .tag{display:inline-block;font-size:11px;background:#fff3cd;border:1px solid var(--yellow);border-radius:4px;padding:1px 5px;margin:2px 3px 0 0}
 .tag.bad{background:#ffe3e3;border-color:#f03e3e}
 .batch{border-left:4px solid var(--yellow);padding:4px 10px;margin:8px 0;background:#faf9f6}
@@ -160,6 +162,7 @@ function renderProducts(list) {
       <div class="small">${esc(p.description)}</div>
       ${stockInfo(p)}
       ${p.restrictions.map(r => `<span class="tag bad">${esc(r)}</span>`).join("")}
+      <div class="acts"><button class="btn sm" data-add="${p.sku}" data-f="take_now">Take now</button><button class="btn sm" data-add="${p.sku}" data-f="${p.pickup_only ? "deliver_to_branch" : "deliver_home"}">${p.pickup_only ? "Pick up at branch" : "Deliver home"}</button></div>
       </div></div>`).join("") : `<p class="empty">No products found.</p>`;
 }
 function buildPlan() {
@@ -305,6 +308,12 @@ async function toggleTalk() {
 /* ====== INIT ====== */
 $("loc").onchange = applyLocation;
 $("talkbtn").onclick = toggleTalk;
+$("products").onclick = async e => {
+  const b = e.target.closest("[data-add]"); if (!b) return;
+  const r = JSON.parse(await tools.add_to_cart({ sku: b.dataset.add, qty: 1, fulfillment: b.dataset.f }));
+  $("caption").textContent = r.error ? r.error : "Added " + r.added;
+  if (!r.error) $("cart").scrollIntoView({ behavior: "smooth", block: "nearest" });
+};
 $("qbtn").onclick = () => tools.search_products({ query: $("q").value });
 applyLocation();
 renderCart();
