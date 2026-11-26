@@ -89,20 +89,7 @@ const BRANCHES = {
   PV: { id: "PV", name: "Sodimac Providencia", lat: -33.4263, lng: -70.6110 }
 };
 const img = t => "https://placehold.co/400x300/ffc20e/1d2733?text=" + encodeURIComponent(t);
-const PRODUCTS = [
-  { sku: "DRILL-18V", name: "Cordless Drill 18V", price_clp: 49990, image_url: img("Cordless Drill"), description: "18V brushless drill with 2 batteries and case.",
-    stock: { SC: 8, PV: 3 }, aisle: { SC: "12", PV: "9" }, shelf: { SC: "B", PV: "A" }, ship_days: 1, restrictions: [], delivery_fee: 3990, pickup_only: false },
-  { sku: "SCREWS-200", name: "Wood Screws, box of 200", price_clp: 4990, image_url: img("Wood Screws"), description: "4x40 mm zinc-plated wood screws.",
-    stock: { SC: 120, PV: 80 }, aisle: { SC: "12", PV: "9" }, shelf: { SC: "D", PV: "C" }, ship_days: 1, restrictions: [], delivery_fee: 3990, pickup_only: false },
-  { sku: "PLY-18MM", name: "Plywood Sheet 18 mm", price_clp: 32990, image_url: img("Plywood Sheet"), description: "1.22 x 2.44 m pine plywood sheet.",
-    stock: { SC: 20, PV: 6 }, aisle: { SC: "Yard 2", PV: "Yard 1" }, shelf: { SC: "Rack 4", PV: "Rack 2" }, ship_days: 4, restrictions: ["bulky", "heavy", "needs special truck"], delivery_fee: 15990, pickup_only: false },
-  { sku: "PAINT-4L", name: "Interior Paint 4 L, white", price_clp: 24990, image_url: img("Interior Paint"), description: "Washable matte white paint, 4 liters.",
-    stock: { SC: 0, PV: 12 }, aisle: { SC: "20", PV: "18" }, shelf: { SC: "A", PV: "B" }, ship_days: 3, restrictions: [], delivery_fee: 3990, pickup_only: false },
-  { sku: "GAS-15KG", name: "Gas Cylinder 15 kg", price_clp: 28990, image_url: img("Gas Cylinder"), description: "Refilled liquefied gas cylinder, 15 kg.",
-    stock: { SC: 14, PV: 9 }, aisle: { SC: "Yard 1", PV: "Yard 3" }, shelf: { SC: "Cage", PV: "Cage" }, ship_days: 0, restrictions: ["pickup only: no home delivery for safety reasons"], delivery_fee: 0, pickup_only: true },
-  { sku: "HEATER-E", name: "Electric Water Heater 50 L", price_clp: 139990, image_url: img("Water Heater"), description: "50 L electric water heater, 2000 W.",
-    stock: { SC: 2, PV: 0 }, aisle: { SC: "31", PV: "28" }, shelf: { SC: "Floor", PV: "Floor" }, ship_days: 5, restrictions: ["heavy", "installation required (scheduled separately)"], delivery_fee: 9990, pickup_only: false }
-];
+let PRODUCTS = [];
 
 /* ====== STATE ====== */
 const state = { mode: "remote", branch_id: "", lat: -33.38, lng: -70.55, cart: [], order: null };
@@ -221,11 +208,18 @@ function validRut(raw) {
 }
 
 /* ====== CLIENT TOOLS (names must match the agent) ====== */
+const STOP = new Set(["the","and","for","with","need","want","looking","where","are","you","have","some","any","find","get","can","how","many","much","does","there","please","like","buy","add","cart","stock","left"]);
+const stem = w => w.length > 3 ? w.replace(/(es|s)$/, "") : w;
 function searchLocal(query = "", max_price, sort) {
-  const words = String(query).toLowerCase().split(/\s+/).filter(Boolean);
-  let list = PRODUCTS.filter(p => words.length === 0 || words.some(w => (p.name + " " + p.description + " " + p.sku).toLowerCase().includes(w)));
+  const words = String(query).toLowerCase().split(/[^a-z0-9áéíóúñ]+/).filter(w => w.length > 2 && !STOP.has(w)).map(stem);
+  let sc = PRODUCTS.map(p => {
+    const hay = (p.name + " " + p.category + " " + p.description + " " + p.sku + " " + (p.tags || "")).toLowerCase();
+    return { p, s: words.filter(w => hay.includes(w)).length };
+  });
+  if (words.length) sc = sc.filter(x => x.s > 0);
+  let list = sc.sort((x, y) => y.s - x.s).map(x => x.p);
   if (max_price) list = list.filter(p => p.price_clp <= max_price);
-  if (sort === "price_asc") list.sort((a, b) => a.price_clp - b.price_clp);
+  if (sort === "price_asc") list.sort((x, y) => x.price_clp - y.price_clp);
   return list.slice(0, 3);
 }
 const tools = {
@@ -255,6 +249,7 @@ const tools = {
       if ((p.stock[state.branch_id] ?? 0) < qty) return JSON.stringify({ error: "Not enough stock here. Offer deliver_home or deliver_to_branch for this product." });
     }
     if (fulfillment === "deliver_home" && p.pickup_only) return JSON.stringify({ error: "This product is pickup only, no home delivery." });
+    if (fulfillment === "take_now") p.stock[state.branch_id] -= qty;
     const ex = state.cart.find(i => i.sku === sku && i.fulfillment === fulfillment);
     ex ? ex.qty += qty : state.cart.push({ sku, qty, fulfillment });
     state.order = null; renderCart();
@@ -315,6 +310,8 @@ $("products").onclick = async e => {
   if (!r.error) $("cart").scrollIntoView({ behavior: "smooth", block: "nearest" });
 };
 $("qbtn").onclick = () => tools.search_products({ query: $("q").value });
+try { PRODUCTS = await (await fetch("products.json")).json(); }
+catch (e) { $("caption").textContent = "Could not load products.json"; }
 applyLocation();
 renderCart();
 </script>
