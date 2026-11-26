@@ -1,0 +1,666 @@
+[
+ {
+  "sku": "DRILL-18V",
+  "name": "Cordless Drill 18V",
+  "category": "Power Tools",
+  "price_clp": 49990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Cordless+Drill+18V",
+  "description": "18V brushless drill with 2 batteries and case.",
+  "tags": "taladro drill",
+  "stock": {
+   "SC": 8,
+   "PV": 3
+  },
+  "aisle": {
+   "SC": "12",
+   "PV": "9"
+  },
+  "shelf": {
+   "SC": "B",
+   "PV": "A"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "JIGSAW-650",
+  "name": "Jigsaw 650 W",
+  "category": "Power Tools",
+  "price_clp": 34990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Jigsaw+650+W",
+  "description": "Variable-speed jigsaw for wood and metal.",
+  "tags": "sierra caladora",
+  "stock": {
+   "SC": 5,
+   "PV": 0
+  },
+  "aisle": {
+   "SC": "12",
+   "PV": "9"
+  },
+  "shelf": {
+   "SC": "C",
+   "PV": "B"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "CIRC-SAW",
+  "name": "Circular Saw 7-1/4 in",
+  "category": "Power Tools",
+  "price_clp": 59990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Circular+Saw+7-1/4+in",
+  "description": "1500 W circular saw with cutting guide.",
+  "tags": "sierra circular",
+  "stock": {
+   "SC": 3,
+   "PV": 4
+  },
+  "aisle": {
+   "SC": "12",
+   "PV": "9"
+  },
+  "shelf": {
+   "SC": "A",
+   "PV": "A"
+  },
+  "ship_days": 2,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "GRINDER-4",
+  "name": "Angle Grinder 4-1/2 in",
+  "category": "Power Tools",
+  "price_clp": 27990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Angle+Grinder+4-1/2+in",
+  "description": "850 W angle grinder with guard.",
+  "tags": "esmeril amoladora",
+  "stock": {
+   "SC": 6,
+   "PV": 2
+  },
+  "aisle": {
+   "SC": "12",
+   "PV": "9"
+  },
+  "shelf": {
+   "SC": "D",
+   "PV": "C"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "SCREW-SET",
+  "name": "Screwdriver Set 6 pieces",
+  "category": "Hand Tools",
+  "price_clp": 12990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Screwdriver+Set+6+pieces",
+  "description": "Phillips and flat screwdrivers with magnetic tips.",
+  "tags": "destornillador",
+  "stock": {
+   "SC": 14,
+   "PV": 9
+  },
+  "aisle": {
+   "SC": "17",
+   "PV": "14"
+  },
+  "shelf": {
+   "SC": "C",
+   "PV": "B"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "SCREW-PREC",
+  "name": "Precision Screwdriver Kit",
+  "category": "Hand Tools",
+  "price_clp": 8990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Precision+Screwdriver+Kit",
+  "description": "24-bit precision kit for electronics and glasses.",
+  "tags": "destornillador",
+  "stock": {
+   "SC": 20,
+   "PV": 0
+  },
+  "aisle": {
+   "SC": "17",
+   "PV": "14"
+  },
+  "shelf": {
+   "SC": "D",
+   "PV": "B"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "HAMMER-16",
+  "name": "Claw Hammer 16 oz",
+  "category": "Hand Tools",
+  "price_clp": 9990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Claw+Hammer+16+oz",
+  "description": "Fiberglass handle claw hammer.",
+  "tags": "martillo",
+  "stock": {
+   "SC": 25,
+   "PV": 18
+  },
+  "aisle": {
+   "SC": "17",
+   "PV": "14"
+  },
+  "shelf": {
+   "SC": "A",
+   "PV": "A"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "TAPE-5M",
+  "name": "Tape Measure 5 m",
+  "category": "Hand Tools",
+  "price_clp": 4990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Tape+Measure+5+m",
+  "description": "5 m locking tape measure.",
+  "tags": "huincha metro",
+  "stock": {
+   "SC": 40,
+   "PV": 30
+  },
+  "aisle": {
+   "SC": "17",
+   "PV": "14"
+  },
+  "shelf": {
+   "SC": "B",
+   "PV": "C"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "WRENCH-ADJ",
+  "name": "Adjustable Wrench 10 in",
+  "category": "Hand Tools",
+  "price_clp": 8990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Adjustable+Wrench+10+in",
+  "description": "Chrome vanadium adjustable wrench.",
+  "tags": "llave inglesa",
+  "stock": {
+   "SC": 11,
+   "PV": 7
+  },
+  "aisle": {
+   "SC": "17",
+   "PV": "14"
+  },
+  "shelf": {
+   "SC": "E",
+   "PV": "D"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "PLIERS-SET",
+  "name": "Pliers Set 3 pieces",
+  "category": "Hand Tools",
+  "price_clp": 14990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Pliers+Set+3+pieces",
+  "description": "Combination, long-nose and cutting pliers.",
+  "tags": "alicate",
+  "stock": {
+   "SC": 9,
+   "PV": 6
+  },
+  "aisle": {
+   "SC": "17",
+   "PV": "14"
+  },
+  "shelf": {
+   "SC": "E",
+   "PV": "E"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "SCREWS-200",
+  "name": "Wood Screws, box of 200",
+  "category": "Fasteners",
+  "price_clp": 4990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Wood+Screws",
+  "description": "4x40 mm zinc-plated wood screws.",
+  "tags": "tornillos",
+  "stock": {
+   "SC": 120,
+   "PV": 80
+  },
+  "aisle": {
+   "SC": "12",
+   "PV": "9"
+  },
+  "shelf": {
+   "SC": "D",
+   "PV": "C"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "NAILS-1KG",
+  "name": "Steel Nails 2 in, 1 kg",
+  "category": "Fasteners",
+  "price_clp": 3990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Steel+Nails+2+in",
+  "description": "Common steel nails, 1 kg bag.",
+  "tags": "clavos",
+  "stock": {
+   "SC": 60,
+   "PV": 45
+  },
+  "aisle": {
+   "SC": "12",
+   "PV": "9"
+  },
+  "shelf": {
+   "SC": "E",
+   "PV": "D"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "ANCHORS-50",
+  "name": "Wall Anchors, pack of 50",
+  "category": "Fasteners",
+  "price_clp": 5490,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Wall+Anchors",
+  "description": "Plastic wall anchors with screws.",
+  "tags": "tarugos",
+  "stock": {
+   "SC": 70,
+   "PV": 0
+  },
+  "aisle": {
+   "SC": "12",
+   "PV": "9"
+  },
+  "shelf": {
+   "SC": "F",
+   "PV": "D"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "PAINT-4L",
+  "name": "Interior Paint 4 L, white",
+  "category": "Paint",
+  "price_clp": 24990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Interior+Paint+4+L",
+  "description": "Washable matte white paint, 4 liters.",
+  "tags": "pintura",
+  "stock": {
+   "SC": 0,
+   "PV": 12
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "A",
+   "PV": "B"
+  },
+  "ship_days": 3,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "ROLLER-KIT",
+  "name": "Paint Roller Kit",
+  "category": "Paint",
+  "price_clp": 9990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Paint+Roller+Kit",
+  "description": "Roller, tray and brush set.",
+  "tags": "rodillo brocha",
+  "stock": {
+   "SC": 18,
+   "PV": 15
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "C",
+   "PV": "C"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "MASK-TAPE",
+  "name": "Masking Tape 48 mm",
+  "category": "Paint",
+  "price_clp": 2990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Masking+Tape+48+mm",
+  "description": "Painter's masking tape, 40 m.",
+  "tags": "cinta",
+  "stock": {
+   "SC": 50,
+   "PV": 35
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "D",
+   "PV": "D"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "PLY-18MM",
+  "name": "Plywood Sheet 18 mm",
+  "category": "Lumber",
+  "price_clp": 32990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Plywood+Sheet+18+mm",
+  "description": "1.22 x 2.44 m pine plywood sheet.",
+  "tags": "terciado madera",
+  "stock": {
+   "SC": 20,
+   "PV": 6
+  },
+  "aisle": {
+   "SC": "Yard 2",
+   "PV": "Yard 1"
+  },
+  "shelf": {
+   "SC": "Rack 4",
+   "PV": "Rack 2"
+  },
+  "ship_days": 4,
+  "restrictions": [
+   "bulky",
+   "heavy",
+   "needs special truck"
+  ],
+  "delivery_fee": 15990,
+  "pickup_only": false
+ },
+ {
+  "sku": "PINE-2X4",
+  "name": "Pine Board 2x4 in, 3 m",
+  "category": "Lumber",
+  "price_clp": 6990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Pine+Board+2x4+in",
+  "description": "Dried pine board, 3 m long.",
+  "tags": "madera pino",
+  "stock": {
+   "SC": 45,
+   "PV": 30
+  },
+  "aisle": {
+   "SC": "Yard 2",
+   "PV": "Yard 1"
+  },
+  "shelf": {
+   "SC": "Rack 1",
+   "PV": "Rack 1"
+  },
+  "ship_days": 3,
+  "restrictions": [
+   "bulky"
+  ],
+  "delivery_fee": 9990,
+  "pickup_only": false
+ },
+ {
+  "sku": "GAS-15KG",
+  "name": "Gas Cylinder 15 kg",
+  "category": "Gas",
+  "price_clp": 28990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Gas+Cylinder+15+kg",
+  "description": "Refilled liquefied gas cylinder, 15 kg.",
+  "tags": "gas balon",
+  "stock": {
+   "SC": 14,
+   "PV": 9
+  },
+  "aisle": {
+   "SC": "Yard 1",
+   "PV": "Yard 3"
+  },
+  "shelf": {
+   "SC": "Cage",
+   "PV": "Cage"
+  },
+  "ship_days": 0,
+  "restrictions": [
+   "pickup only: no home delivery for safety reasons"
+  ],
+  "delivery_fee": 0,
+  "pickup_only": true
+ },
+ {
+  "sku": "HEATER-E",
+  "name": "Electric Water Heater 50 L",
+  "category": "Plumbing",
+  "price_clp": 139990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Electric+Water+Heater+50+L",
+  "description": "50 L electric water heater, 2000 W.",
+  "tags": "calefont termo",
+  "stock": {
+   "SC": 2,
+   "PV": 0
+  },
+  "aisle": {
+   "SC": "31",
+   "PV": "28"
+  },
+  "shelf": {
+   "SC": "Floor",
+   "PV": "Floor"
+  },
+  "ship_days": 5,
+  "restrictions": [
+   "heavy",
+   "installation required (scheduled separately)"
+  ],
+  "delivery_fee": 9990,
+  "pickup_only": false
+ },
+ {
+  "sku": "FAUCET-K",
+  "name": "Kitchen Faucet, chrome",
+  "category": "Plumbing",
+  "price_clp": 39990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Kitchen+Faucet",
+  "description": "Single-lever chrome kitchen faucet.",
+  "tags": "llave grifo",
+  "stock": {
+   "SC": 7,
+   "PV": 5
+  },
+  "aisle": {
+   "SC": "25",
+   "PV": "22"
+  },
+  "shelf": {
+   "SC": "B",
+   "PV": "A"
+  },
+  "ship_days": 2,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "LED-10W",
+  "name": "LED Bulbs 10 W, pack of 4",
+  "category": "Electrical",
+  "price_clp": 7990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=LED+Bulbs+10+W",
+  "description": "Warm white E27 LED bulbs.",
+  "tags": "ampolleta",
+  "stock": {
+   "SC": 80,
+   "PV": 60
+  },
+  "aisle": {
+   "SC": "22",
+   "PV": "20"
+  },
+  "shelf": {
+   "SC": "A",
+   "PV": "A"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "EXT-CORD",
+  "name": "Extension Cord 5 m",
+  "category": "Electrical",
+  "price_clp": 6990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Extension+Cord+5+m",
+  "description": "3-outlet extension cord, 5 m.",
+  "tags": "alargador",
+  "stock": {
+   "SC": 22,
+   "PV": 0
+  },
+  "aisle": {
+   "SC": "22",
+   "PV": "20"
+  },
+  "shelf": {
+   "SC": "C",
+   "PV": "B"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "HOSE-15M",
+  "name": "Garden Hose 15 m",
+  "category": "Garden",
+  "price_clp": 17990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Garden+Hose+15+m",
+  "description": "Reinforced garden hose with sprayer.",
+  "tags": "manguera",
+  "stock": {
+   "SC": 10,
+   "PV": 8
+  },
+  "aisle": {
+   "SC": "Garden",
+   "PV": "Garden"
+  },
+  "shelf": {
+   "SC": "B",
+   "PV": "B"
+  },
+  "ship_days": 2,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "WHEEL-BAR",
+  "name": "Wheelbarrow 90 L",
+  "category": "Garden",
+  "price_clp": 44990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Wheelbarrow+90+L",
+  "description": "Steel wheelbarrow, 90 L.",
+  "tags": "carretilla",
+  "stock": {
+   "SC": 4,
+   "PV": 2
+  },
+  "aisle": {
+   "SC": "Garden",
+   "PV": "Garden"
+  },
+  "shelf": {
+   "SC": "Floor",
+   "PV": "Floor"
+  },
+  "ship_days": 4,
+  "restrictions": [
+   "bulky",
+   "needs special truck"
+  ],
+  "delivery_fee": 12990,
+  "pickup_only": false
+ },
+ {
+  "sku": "GLOVES-L",
+  "name": "Work Gloves, leather",
+  "category": "Safety",
+  "price_clp": 5990,
+  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Work+Gloves",
+  "description": "Leather work gloves, size L.",
+  "tags": "guantes",
+  "stock": {
+   "SC": 40,
+   "PV": 30
+  },
+  "aisle": {
+   "SC": "30",
+   "PV": "27"
+  },
+  "shelf": {
+   "SC": "A",
+   "PV": "A"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ }
+]
