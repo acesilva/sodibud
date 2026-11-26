@@ -289,14 +289,23 @@ const tools = {
   }
 };
 
+for (const k of Object.keys(tools)) {
+  const f = tools[k];
+  tools[k] = async p => {
+    try { const r = await f(p); $("caption").textContent = "Tool " + k + ": OK"; return r; }
+    catch (e) { console.error(k, e); $("caption").textContent = "Tool " + k + " failed: " + e.message; return JSON.stringify({ error: String(e.message) }); }
+  };
+}
+
 /* ====== VOICE SESSION ====== */
 let convo = null;
 async function toggleTalk() {
   const btn = $("talkbtn");
   if (convo) { await convo.endSession(); return; }
-  if (AGENT_ID === "YOUR_AGENT_ID") { $("caption").textContent = "Paste your agent ID in index.html first."; return; }
+  if (!AGENT_ID || AGENT_ID === "YOUR_AGENT_ID") { $("caption").textContent = "Paste your agent ID in index.html first."; return; }
+  try { await navigator.mediaDevices.getUserMedia({ audio: true }); }
+  catch (e) { $("caption").textContent = "Microphone permission is needed to talk."; return; }
   try {
-    await navigator.mediaDevices.getUserMedia({ audio: true });
     btn.textContent = "Connecting…";
     convo = await Conversation.startSession({
       agentId: AGENT_ID,
@@ -306,11 +315,12 @@ async function toggleTalk() {
       onConnect: () => { btn.textContent = "End conversation"; btn.classList.add("live"); },
       onDisconnect: () => { convo = null; btn.textContent = "Talk to Sodibud"; btn.classList.remove("live"); $("caption").textContent = ""; },
       onMessage: m => { if (m.message) $("caption").textContent = (m.source === "ai" ? "Sodibud: " : "You: ") + m.message; },
-      onError: e => { $("caption").textContent = "Connection problem. Try again."; console.error(e); }
+      onError: e => { $("caption").textContent = "Connection problem: " + (typeof e === "string" ? e : (e && e.message) || "see console"); console.error(e); }
     });
   } catch (e) {
     convo = null; btn.textContent = "Talk to Sodibud";
-    $("caption").textContent = "Microphone permission is needed to talk.";
+    console.error(e);
+    $("caption").textContent = "Could not connect: " + (e && e.message ? e.message : "see console (Cmd+Option+J)");
   }
 }
 
