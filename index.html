@@ -30,6 +30,8 @@ button{font:inherit;cursor:pointer}
 .prod b{display:block;font-size:14px}
 .price{font-weight:800;font-size:16px;color:var(--orange)}
 .small{font-size:12px;color:var(--muted)}
+.btn.rm{background:#f03e3e;padding:4px 9px;font-size:11px}
+.line{align-items:center}
 .acts{display:flex;gap:6px;margin-top:8px}
 .btn.sm{padding:7px 10px;font-size:12px}
 .tag{display:inline-block;font-size:11px;background:#fff3cd;border:1px solid var(--yellow);border-radius:4px;padding:1px 5px;margin:2px 3px 0 0}
@@ -160,9 +162,9 @@ function buildPlan() {
     if (it.fulfillment === "take_now") { key = "now"; label = "Take now (picked by staff or by you)"; date = "Today"; }
     else if (it.fulfillment === "deliver_to_branch") { key = "branch" + p.ship_days; label = "Delivery to branch"; date = deliveryDate(p.ship_days); }
     else { key = "home" + p.ship_days + (p.restrictions.length ? "r" + p.sku : ""); label = "Home delivery"; date = deliveryDate(p.ship_days); fee = p.delivery_fee; }
-    batches[key] = batches[key] || { label, date, window: it.fulfillment === "deliver_home" ? "10:00 to 14:00" : "", fee: 0, items: [], restrictions: [] };
+    batches[key] = batches[key] || { label, date, window: it.fulfillment === "deliver_home" ? "10:00 to 14:00" : "", fee: 0, items: [], refs: [], restrictions: [] };
     const b = batches[key];
-    b.items.push(`${it.qty} x ${p.name}`);
+    b.items.push(`${it.qty} x ${p.name}`); b.refs.push({ sku: it.sku, f: it.fulfillment });
     b.fee = Math.max(b.fee, fee);
     p.restrictions.forEach(r => { if (!b.restrictions.includes(r)) b.restrictions.push(r); });
   }
@@ -178,7 +180,7 @@ function renderCart() {
   const t = cartTotals();
   const batches = buildPlan().map(b => `
     <div class="batch"><b>${esc(b.label)}</b> <span class="small">${esc(b.date)} ${esc(b.window)}</span>
-      ${b.items.map(i => `<div class="line"><span>${esc(i)}</span></div>`).join("")}
+      ${b.items.map((i, k) => `<div class="line"><span>${esc(i)}</span>${state.order && state.order.paid ? "" : `<button class="btn rm" data-rm="${b.refs[k].sku}" data-f="${b.refs[k].f}">Remove</button>`}</div>`).join("")}
       ${b.restrictions.map(r => `<span class="tag bad">${esc(r)}</span>`).join("")}
       ${b.fee ? `<div class="small">Delivery fee: ${clp(b.fee)}</div>` : ""}
     </div>`).join("");
@@ -222,7 +224,19 @@ function searchLocal(query = "", max_price, sort) {
   if (sort === "price_asc") list.sort((x, y) => x.price_clp - y.price_clp);
   return list.slice(0, 3);
 }
+function removeItem(sku, fulfillment, qty) {
+  if (state.order && state.order.paid) return { error: "The order is already paid and cannot be changed." };
+  const it = state.cart.find(i => i.sku === sku && (!fulfillment || i.fulfillment === fulfillment));
+  if (!it) return { error: "That product is not in the cart." };
+  const n = qty && qty < it.qty ? qty : it.qty;
+  if (it.fulfillment === "take_now") bySku(sku).stock[state.branch_id] += n;
+  it.qty -= n;
+  if (it.qty <= 0) state.cart.splice(state.cart.indexOf(it), 1);
+  state.order = null; renderCart();
+  return { removed: `${n} x ${bySku(sku).name}`, cart: cartPayload() };
+}
 const tools = {
+  remove_from_cart: async ({ sku, qty, fulfillment }) => JSON.stringify(removeItem(sku, fulfillment, qty)),
   search_products: async ({ query, max_price, sort }) => {
     const list = searchLocal(query, max_price, sort);
     renderProducts(list);
@@ -308,6 +322,11 @@ $("products").onclick = async e => {
   const r = JSON.parse(await tools.add_to_cart({ sku: b.dataset.add, qty: 1, fulfillment: b.dataset.f }));
   $("caption").textContent = r.error ? r.error : "Added " + r.added;
   if (!r.error) $("cart").scrollIntoView({ behavior: "smooth", block: "nearest" });
+};
+$("cart").onclick = e => {
+  const b = e.target.closest("[data-rm]"); if (!b) return;
+  const r = removeItem(b.dataset.rm, b.dataset.f);
+  $("caption").textContent = r.error ? r.error : "Removed " + r.removed;
 };
 $("qbtn").onclick = () => tools.search_products({ query: $("q").value });
 try { PRODUCTS = await (await fetch("products.json")).json(); }
