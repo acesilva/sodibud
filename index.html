@@ -240,8 +240,14 @@ function renderCart() {
   $("cart").innerHTML = batches +
     `<div class="line"><span>Items</span><span>${clp(t.items)}</span></div>
      <div class="line"><span>Delivery</span><span>${clp(t.fees)}</span></div>
-     <div class="line total"><span>Total</span><span>${clp(t.total)}</span></div>` + order;
+     <div class="line total"><span>Total</span><span>${clp(t.total)}</span></div>` + order +
+    (state.order ? "" : `<div class="row" style="margin-top:8px"><input type="text" id="rutin" value="12.345.678-5" aria-label="RUT"><button class="btn" id="cobtn">Check out</button></div><div class="small">Or just ask Sodibud to check out.</div>`);
   const pb = $("paybtn"); if (pb) pb.onclick = payNow;
+  const cb = $("cobtn");
+  if (cb) cb.onclick = async () => {
+    const r = JSON.parse(await tools.checkout({ rut: $("rutin").value }));
+    if (r.error) $("caption").textContent = r.error;
+  };
   const ad = $("addr"); if (ad) ad.oninput = () => { state.address = ad.value; save(); };
 }
 function cartPayload() {
