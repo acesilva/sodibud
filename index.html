@@ -431,7 +431,7 @@ const tools = {
     if (!p) return JSON.stringify({ error: "Unknown SKU" });
     if (fulfillment === "take_now") {
       if (state.mode === "unknown") return JSON.stringify({ error: "Location unknown. Ask the customer if they are at home or at a store, then call set_location." });
-      if (state.mode !== "at_branch") return JSON.stringify({ error: "take_now only works when the customer is at a branch. Use deliver_home or deliver_to_branch." });
+      if (state.mode !== "at_branch") return JSON.stringify({ error: "Customer is currently marked as remote. If they said they are in a store, call set_location with mode at_branch and their branch_id (SC or PV), then retry take_now. Otherwise use deliver_home or deliver_to_branch." });
       if ((p.stock[state.branch_id] ?? 0) < qty) return JSON.stringify({ error: "Not enough stock here. Offer deliver_home or deliver_to_branch for this product." });
     }
     if (fulfillment === "deliver_home" && p.pickup_only) return JSON.stringify({ error: "This product is pickup only, no home delivery." });
