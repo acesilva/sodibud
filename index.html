@@ -89,6 +89,9 @@ import { Conversation } from "https://esm.sh/@elevenlabs/client";
 /* ====== CONFIG: paste your agent ID here ====== */
 const AGENT_ID = "agent_3301m8a7xwrefn2b86ffz23r4497";
 
+/* Set to true ONLY after turning on "First message" under Agent > Settings > Security > Overrides */
+const USE_FIRST_MESSAGE_OVERRIDE = false;
+
 /* ====== MOCK DATA ====== */
 const BRANCHES = {
   SC: { id: "SC", name: "Sodimac Santiago Centro", lat: -33.4372, lng: -70.6506 },
@@ -398,7 +401,7 @@ function buildContext() {
   let first = "Hi, I'm Sodibud, your Sodimac assistant. Are you shopping from home or visiting one of our stores today?";
   if (state.cart.length) first = `Welcome back! You have ${state.cart.length} item${state.cart.length > 1 ? "s" : ""} in your cart. Want to pick up where we left off? Are you still ${where}?`;
   else if (returning) first = "Welcome back! Are you shopping from home or visiting one of our stores today?";
-  return { first, vars: { returning_customer: returning ? "yes" : "no", cart_summary: cartTxt, last_conversation: last, past_purchases: past } };
+  return { first, vars: { returning_customer: returning ? "yes" : "no", cart_summary: cartTxt, last_conversation: last, past_purchases: past, greeting_extra: first } };
 }
 
 /* ====== VOICE SESSION ====== */
@@ -416,7 +419,7 @@ async function toggleTalk() {
       agentId: AGENT_ID,
       connectionType: "webrtc",
       dynamicVariables: { mode: state.mode, branch_id: state.branch_id, user_lat: String(state.lat), user_lng: String(state.lng), cart_id: cartId(), ...ctx.vars },
-      overrides: { agent: { firstMessage: ctx.first } },
+      ...(USE_FIRST_MESSAGE_OVERRIDE ? { overrides: { agent: { firstMessage: ctx.first } } } : {}),
       clientTools: tools,
       onConnect: () => { btn.textContent = "End conversation"; btn.classList.add("live"); },
       onDisconnect: () => { if (!lastTalk.length) lastTalk = prevTalk; save(); convo = null; btn.textContent = "Talk to Sodibud"; btn.classList.remove("live"); $("caption").textContent = ""; },
