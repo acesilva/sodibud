@@ -23,8 +23,22 @@ button{font:inherit;cursor:pointer}
 .btn{background:var(--ink);color:#fff;border:0;border-radius:8px;padding:10px 14px;font-weight:600}
 .btn.pay{background:var(--green);width:100%;margin-top:8px}
 #status{font-size:13px;color:var(--muted);margin-top:6px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
-.prod{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.car{display:flex;align-items:center;gap:6px}
+.track{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x proximity;scroll-behavior:smooth;scrollbar-width:none;flex:1;padding:2px;min-width:0}
+.track::-webkit-scrollbar{display:none}
+.track .empty{padding:8px}
+.arr{flex:0 0 auto;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:20px;line-height:1;color:var(--ink)}
+.arr:hover{background:var(--yellow)}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-bottom:8px;padding-bottom:2px}
+.chip{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:16px;padding:5px 11px;font-size:12px;font-weight:600}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip.proj{border-color:var(--yellow)}
+.rcpt{border:2px dashed var(--ink);border-radius:8px;padding:10px;margin:8px 0;background:#fff;font-size:14px}
+.rcpt h3{margin:0 0 4px;font-size:15px}
+.rcpt .code{font-size:24px;font-weight:800;letter-spacing:2px;text-align:center;background:var(--yellow);border-radius:6px;padding:6px;margin:6px 0}
+.rcpt .sec{margin-top:8px;padding-top:6px;border-top:1px solid var(--line)}
+.prod{flex:0 0 185px;scroll-snap-align:start;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.prod.focus{border:2px solid var(--orange)}
 .prod img{width:100%;height:130px;object-fit:contain;background:#ffc20e;display:block}
 .prod div{padding:8px 10px}
 .prod b{display:block;font-size:14px}
@@ -60,6 +74,7 @@ a.btn{text-decoration:none;display:inline-block}
   <section class="panel">
     <h2>Where are you?</h2>
     <select id="loc">
+      <option value="">Select your location…</option>
       <option value="home">At home (simulated)</option>
       <option value="SC">At Sodimac Santiago Centro (simulated)</option>
       <option value="PV">At Sodimac Providencia (simulated)</option>
@@ -73,9 +88,9 @@ a.btn{text-decoration:none;display:inline-block}
     <div class="row"><input type="text" id="q" placeholder="e.g. drill, paint, plywood"><button class="btn" id="qbtn">Search</button></div>
   </section>
 
-  <section class="panel"><h2>Products</h2><div id="products" class="grid"><p class="empty">Ask Sodibud for a product and it will appear here.</p></div></section>
+  <section class="panel"><h2>Products <span id="pcount" class="small"></span></h2><div class="chips" id="chips"></div><div class="car"><button class="arr" id="pl" aria-label="Previous products">‹</button><div id="products" class="track"><p class="empty">Ask Sodibud for a product and it will appear here.</p></div><button class="arr" id="pr" aria-label="Next products">›</button></div></section>
   <section class="panel"><h2>Your cart</h2><div id="cart"><p class="empty">Your cart is empty.</p></div></section>
-  <p class="note">Mock data. Your cart and history are saved in this browser. <button class="btn sm" id="reset">Start fresh</button></p>
+  <p class="note">Mock data. Your cart and history are saved in this browser (your location is kept). <button class="btn sm" id="reset">Start fresh</button></p>
 </main>
 
 <div id="talk">
@@ -101,10 +116,10 @@ const img = t => "https://placehold.co/400x300/ffc20e/1d2733?text=" + encodeURIC
 let PRODUCTS = [];
 
 /* ====== STATE ====== */
-const state = { mode: "remote", branch_id: "", lat: -33.38, lng: -70.55, cart: [], order: null, address: "Av. Providencia 1234, Providencia" };
+const state = { mode: "remote", branch_id: "", lat: -33.38, lng: -70.55, cart: [], order: null, address: "Av. Providencia 1234, Providencia", email: "a.acesilva@gmail.com", shown: [], focus: null };
 const LS = "sodibud_v1";
 let orders = [], lastTalk = [], prevTalk = [];
-function save() { try { localStorage.setItem(LS, JSON.stringify({ cart: state.cart, order: state.order, loc: $("loc").value, orders, lastTalk, address: state.address })); } catch (e) {} }
+function save() { try { localStorage.setItem(LS, JSON.stringify({ cart: state.cart, order: state.order, loc: $("loc").value, orders, lastTalk, address: state.address, email: state.email })); } catch (e) {} }
 function loadSaved() { try { return JSON.parse(localStorage.getItem(LS) || "null"); } catch (e) { return null; } }
 const $ = id => document.getElementById(id);
 const clp = n => "$" + n.toLocaleString("es-CL");
@@ -149,6 +164,7 @@ function finishLocation() {
   const n = nearestBranch();
   state.mode = n.km <= 0.15 ? "at_branch" : "remote";
   state.branch_id = n.b.id;
+  if ($("loc").value === "") { state.mode = "unknown"; $("status").textContent = "Choose where you are above, or just tell Sodibud."; return; }
   $("status").textContent = state.mode === "at_branch"
     ? `You are at ${n.b.name}.` : `Nearest branch: ${n.b.name}, ${n.km.toFixed(1)} km away.`;
 }
@@ -158,15 +174,40 @@ function stockInfo(p) {
   const here = p.stock[state.branch_id] ?? 0;
   return here > 0 ? `<span class="tag">${here} in stock here</span>` : `<span class="tag bad">Out of stock here</span>`;
 }
-function renderProducts(list) {
-  $("products").innerHTML = list.length ? list.map(p => `
-    <div class="prod"><img src="${p.image_url}" alt="${esc(p.name)}">
+const PROJECTS = {
+  hang_shelf: ["DRILL-18V","ANCHORS-50","SCREWS-200","TAPE-5M","SCREW-SET"],
+  paint_room: ["PAINT-4L","ROLLER-KIT","MASK-TAPE","GLOVES-L"],
+  garden_care: ["HOSE-15M","WHEEL-BAR","GLOVES-L"],
+  wood_work: ["PLY-18MM","PINE-2X4","CIRC-SAW","JIGSAW-650","SCREWS-200","GLOVES-L"],
+  plumbing: ["FAUCET-K","WRENCH-ADJ","PLIERS-SET"],
+  water_heater: ["HEATER-E","WRENCH-ADJ","PLIERS-SET"],
+  lighting_power: ["LED-10W","EXT-CORD"]
+};
+const PROJECT_LABELS = { hang_shelf: "Hang a shelf", paint_room: "Paint a room", garden_care: "Garden", wood_work: "Wood work", plumbing: "Plumbing", water_heater: "Water heater", lighting_power: "Lighting" };
+function renderProducts(list, reset = true) {
+  const tr = $("products"), sl = tr.scrollLeft;
+  state.shown = list;
+  $("pcount").textContent = list.length ? `(${list.length})` : "";
+  tr.innerHTML = list.length ? list.map(p => `
+    <div class="prod${state.focus === p.sku ? " focus" : ""}" data-sku="${p.sku}"><img src="${p.image_url}" alt="${esc(p.name)}">
       <div><b>${esc(p.name)}</b><span class="price">${clp(p.price_clp)}</span>
       <div class="small">${esc(p.description)}</div>
       ${stockInfo(p)}
       ${p.restrictions.map(r => `<span class="tag bad">${esc(r)}</span>`).join("")}
       <div class="acts"><button class="btn sm" data-add="${p.sku}" data-f="take_now">Take now</button><button class="btn sm" data-add="${p.sku}" data-f="${p.pickup_only ? "deliver_to_branch" : "deliver_home"}">${p.pickup_only ? "Pick up at branch" : "Deliver home"}</button></div>${state.dirTo && state.dirTo.sku === p.sku ? `<div class="acts"><a class="btn sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${state.dirTo.b.lat},${state.dirTo.b.lng}">Directions to ${esc(state.dirTo.b.name)}</a></div>` : ""}
       </div></div>`).join("") : `<p class="empty">No products found.</p>`;
+  tr.style.scrollBehavior = "auto"; tr.scrollLeft = reset ? 0 : sl; tr.style.scrollBehavior = "";
+}
+function focusCard(sku) {
+  state.focus = sku; renderProducts(state.shown, false);
+  const el = $("products").querySelector(`[data-sku="${sku}"]`);
+  if (el) $("products").scrollTo({ left: Math.max(0, el.offsetLeft - 8) });
+}
+function buildChips() {
+  const cats = [...new Set(PRODUCTS.map(p => p.category))];
+  $("chips").innerHTML = `<button class="chip on" data-chip="all">All</button>` +
+    Object.keys(PROJECTS).map(k => `<button class="chip proj" data-chip="project:${k}">${PROJECT_LABELS[k]}</button>`).join("") +
+    cats.map(c => `<button class="chip" data-chip="cat:${esc(c)}">${esc(c)}</button>`).join("");
 }
 function buildPlan() {
   const batches = {};
@@ -192,39 +233,73 @@ function buildPlan() {
 function cartTotals() {
   const items = state.cart.reduce((s, it) => s + bySku(it.sku).price_clp * it.qty, 0);
   const fees = buildPlan().reduce((s, b) => s + b.fee, 0);
-  const cash = state.cart.filter(i => i.fulfillment === "take_now").reduce((s, it) => s + bySku(it.sku).price_clp * it.qty, 0);
-  return { items, fees, cash, online: items - cash + fees, total: items + fees };
+  return { items, fees, total: items + fees, online: items + fees, cash: 0 };
 }
 function recordOrder() {
   orders.unshift({ id: state.order.id, date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" }), items: state.cart.map(i => `${i.qty} x ${bySku(i.sku).name}`) });
   orders = orders.slice(0, 5);
 }
+function splitCart() {
+  const pickup = state.cart.filter(i => i.fulfillment === "take_now").map(i => { const p = bySku(i.sku), b = i.branch || state.branch_id;
+    return { qty: i.qty, name: p.name, aisle: p.aisle[b], shelf: p.shelf[b] }; });
+  const delivery = buildPlan().filter(b => b.label !== "Take now (picked by staff or by you)")
+    .map(b => ({ label: b.label, date: b.date, window: b.window, items: b.items, restrictions: b.restrictions }));
+  return { pickup, delivery };
+}
+function scenario(sp) { return sp.pickup.length && sp.delivery.length ? "mixed" : sp.pickup.length ? "pickup" : "delivery"; }
+function receiptText(o) {
+  const r = o.receipt, L = [`Sodibud receipt ${o.id}`, `Paid ${clp(r.total)} on ${r.when}`, ""];
+  if (r.pickup.length) { L.push(`PICK UP at ${r.branch} - show this receipt, code ${o.id}`); r.pickup.forEach(p => L.push(`- ${p.qty} x ${p.name} (aisle ${p.aisle}, shelf ${p.shelf})`)); L.push(""); }
+  if (r.delivery.length) { L.push(r.address ? `DELIVERY to ${r.address}` : "DELIVERY"); r.delivery.forEach(d => { L.push(`${d.label}: ${d.date} ${d.window}`.trim()); d.items.forEach(i => L.push(`- ${i}`)); }); L.push(""); }
+  L.push("Concept demo, no real charge."); return L.join("\n");
+}
+function receiptHtml(o) {
+  const r = o.receipt;
+  return `<div class="rcpt"><h3>Receipt ${esc(o.id)}</h3><div class="small">Paid ${clp(r.total)} · ${esc(r.when)}</div>
+    ${r.pickup.length ? `<div class="sec"><b>Pick up at ${esc(r.branch)}</b><div class="small">Show this receipt at the pickup desk.</div><div class="code">${esc(o.id)}</div>
+      ${r.pickup.map(p => `<div class="line"><span>${p.qty} x ${esc(p.name)}</span><span class="small">aisle ${esc(p.aisle)}, shelf ${esc(p.shelf)}</span></div>`).join("")}</div>` : ""}
+    ${r.delivery.length ? `<div class="sec"><b>Delivered${r.address ? " to " + esc(r.address) : ""}</b>
+      ${r.delivery.map(d => `<div class="small">${esc(d.label)}: ${esc(d.date)} ${esc(d.window)}</div>${d.items.map(i => `<div class="line"><span>${esc(i)}</span></div>`).join("")}${d.restrictions.map(x => `<span class="tag bad">${esc(x)}</span>`).join("")}`).join("")}</div>` : ""}
+    <div class="small sec">Receipt sent to ${esc(r.email)} · no real charge (demo)</div></div>`;
+}
 function orderPanel(t) {
-  const o = state.order, hasDel = state.cart.some(i => i.fulfillment !== "take_now");
-  const head = `<div class="batch"><b>Order ${esc(o.id)}</b><div class="small">RUT ${esc(o.rut)}${o.paid ? (o.cash_only ? " · Pay at the register" : " · Paid") : " · Ready to pay"}</div></div>`;
-  if (o.paid) return head + (o.cash_only
-    ? `<div class="pay-ok">Nothing to pay online. Pay ${clp(t.cash)} in cash at the register and staff will hand you your products.</div>`
-    : `<div class="pay-ok">Payment received: ${clp(t.online)}.${t.cash ? ` Pay ${clp(t.cash)} at the register for the items you take now.` : ""}${hasDel ? ` Delivery to ${esc(state.address)}.` : ""}</div>`);
+  const o = state.order, sp = splitCart(), hasDel = sp.delivery.length;
+  const head = `<div class="batch"><b>Order ${esc(o.id)}</b><div class="small">RUT ${esc(o.rut)}${o.paid ? " · Paid" : " · Ready to pay"}</div></div>`;
+  if (o.paid) return head + receiptHtml(o);
   return head + `<div class="payp">
-    <div class="line"><span>Pay online now</span><b>${clp(t.online)}</b></div>
-    ${t.cash ? `<div class="line"><span>Pay at the register</span><b>${clp(t.cash)}</b></div>` : ""}
+    <div class="line"><span>Total to pay now</span><b>${clp(t.total)}</b></div>
+    <div class="small">${sp.pickup.length ? "Items you take now: show your receipt at the pickup desk. " : ""}${hasDel ? "Delivery items arrive at your address." : ""}</div>
     ${hasDel ? `<label class="small">Delivery address</label><input type="text" id="addr" value="${esc(state.address)}">` : ""}
+    <label class="small">Send receipt to</label><input type="text" id="mail" value="${esc(state.email)}" inputmode="email">
     <label class="small">Card number</label><input type="text" id="cnum" value="4242 4242 4242 4242" inputmode="numeric">
     <div class="row"><input type="text" id="cexp" value="12/30" aria-label="Expiry"><input type="text" id="ccvc" value="123" aria-label="CVC"></div>
     <input type="text" id="cname" value="Demo Customer" aria-label="Name on card">
     <div class="small">Demo payment, no real charge.</div>
-    <button class="btn pay" id="paybtn">Pay ${clp(t.online)}</button></div>`;
+    <button class="btn pay" id="paybtn">Pay ${clp(t.total)}</button></div>`;
+}
+function notifyPayment(o) {
+  const r = o.receipt, sc = o.scenario;
+  const title = { pickup: `Paid - pick up at ${r.branch} - ${o.id}`, delivery: `Paid - home delivery - ${o.id}`, mixed: `Paid - pick up now + home delivery - ${o.id}` }[sc];
+  const msg = receiptText(o);
+  const body = { topic: NTFY_TOPIC, title, message: msg, tags: ["moneybag"], priority: 4 };
+  if (r.email) body.email = r.email;
+  fetch("https://ntfy.sh/", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }).catch(() => {});
 }
 function payNow() {
   const t = cartTotals(), o = state.order, btn = $("paybtn");
   if ((($("cnum").value || "").replace(/\D/g, "")).length < 13) { $("caption").textContent = "Enter a valid card number (demo: 4242 4242 4242 4242)."; return; }
-  btn.disabled = true; btn.textContent = "Processing…";
+  const em = ($("mail").value || "").trim();
+  if (em && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { $("caption").textContent = "That email address looks wrong."; return; }
+  state.email = em; btn.disabled = true; btn.textContent = "Processing…";
   setTimeout(() => {
     if (!state.order || state.order !== o) return;
-    o.paid = true; recordOrder();
-    const hasDel = state.cart.some(i => i.fulfillment !== "take_now");
-    alertStaff("Payment received - " + o.id, `${clp(t.online)} paid online` + (t.cash ? `, ${clp(t.cash)} due at the register` : "") + (hasDel ? `. Delivery to ${state.address.slice(0, 40)}` : ""), ["moneybag"]);
-    try { if (convo && convo.sendContextualUpdate) convo.sendContextualUpdate(`The customer paid ${clp(t.online)} online. Order ${o.id} is confirmed.` + (t.cash ? ` ${clp(t.cash)} is still due at the register.` : "")); } catch (e) {}
+    const sp = splitCart();
+    o.paid = true; o.scenario = scenario(sp);
+    o.receipt = { total: t.total, when: new Date().toLocaleString("en-US", { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }),
+      branch: BRANCHES[state.branch_id].name, address: sp.delivery.some(d => d.label === "Home delivery") ? state.address : "", email: em, pickup: sp.pickup, delivery: sp.delivery };
+    recordOrder(); notifyPayment(o);
+    try { if (convo && convo.sendContextualUpdate) convo.sendContextualUpdate(`The customer paid ${clp(t.total)} online for order ${o.id}. Receipt emailed. ` +
+      (sp.pickup.length ? "Tell them to show the receipt at the pickup desk to collect the items they take now. " : "") + (sp.delivery.length ? "The rest will be delivered on the dates shown." : "")); } catch (e) {}
     renderCart();
   }, 1500);
 }
@@ -252,10 +327,11 @@ function renderCart() {
     if (r.error) $("caption").textContent = r.error;
   };
   const ad = $("addr"); if (ad) ad.oninput = () => { state.address = ad.value; save(); };
+  const ml = $("mail"); if (ml) ml.oninput = () => { state.email = ml.value; save(); };
 }
 function cartPayload() {
   const t = cartTotals();
-  return { cart_id: cartId(), items: state.cart, batches: buildPlan(), items_total_clp: t.items, delivery_fees_clp: t.fees, total_clp: t.total, online_payment_clp: t.online, cash_at_register_clp: t.cash, delivery_address: state.address, order: state.order };
+  return { cart_id: cartId(), items: state.cart, batches: buildPlan(), items_total_clp: t.items, delivery_fees_clp: t.fees, total_clp: t.total, online_payment_clp: t.total, delivery_address: state.address, pickup_items: splitCart().pickup.map(p => `${p.qty} x ${p.name}`), order: state.order };
 }
 
 /* ====== RUT VALIDATION (modulo 11) ====== */
@@ -272,9 +348,17 @@ function validRut(raw) {
 /* ====== CLIENT TOOLS (names must match the agent) ====== */
 const STOP = new Set(["the","and","for","with","need","want","looking","where","are","you","have","some","any","find","get","can","how","many","much","does","there","please","like","buy","add","cart","stock","left"]);
 const stem = w => w.length > 3 ? w.replace(/(es|s)$/, "") : w;
-function searchLocal(query = "", max_price, sort) {
-  const words = String(query).toLowerCase().split(/[^a-z0-9áéíóúñ]+/).filter(w => w.length > 2 && !STOP.has(w)).map(stem);
-  let sc = PRODUCTS.map(p => {
+function searchLocal(query = "", max_price, sort, project, category) {
+  let base = PRODUCTS, words = [];
+  if (project) {
+    const k = String(project).toLowerCase().replace(/[^a-z]+/g, "_");
+    const key = PROJECTS[k] ? k : Object.keys(PROJECTS).find(x => x.includes(k) || k.includes(x.split("_")[0]));
+    if (key) base = PROJECTS[key].map(bySku).filter(Boolean);
+  } else {
+    if (category) { const c = String(category).toLowerCase(); base = PRODUCTS.filter(p => p.category.toLowerCase().includes(c)); }
+    words = String(query).toLowerCase().split(/[^a-z0-9áéíóúñ]+/).filter(w => w.length > 2 && !STOP.has(w)).map(stem);
+  }
+  let sc = base.map(p => {
     const hay = (p.name + " " + p.category + " " + p.description + " " + p.sku + " " + (p.tags || "")).toLowerCase();
     return { p, s: words.filter(w => hay.includes(w)).length };
   });
@@ -282,7 +366,7 @@ function searchLocal(query = "", max_price, sort) {
   let list = sc.sort((x, y) => y.s - x.s).map(x => x.p);
   if (max_price) list = list.filter(p => p.price_clp <= max_price);
   if (sort === "price_asc") list.sort((x, y) => x.price_clp - y.price_clp);
-  return list.slice(0, 3);
+  return list.slice(0, 12);
 }
 function removeItem(sku, fulfillment, qty) {
   if (state.order && state.order.paid) return { error: "The order is already paid and cannot be changed." };
@@ -318,12 +402,14 @@ const tools = {
     return JSON.stringify({ mode: state.mode, branch_id: state.branch_id, branch: BRANCHES[state.branch_id].name });
   },
   remove_from_cart: async ({ sku, qty, fulfillment }) => JSON.stringify(removeItem(sku, fulfillment, qty)),
-  search_products: async ({ query, max_price, sort }) => {
-    state.dirTo = null;
-    const list = searchLocal(query, max_price, sort);
+  search_products: async ({ query, max_price, sort, project, category }) => {
+    state.dirTo = null; state.focus = null;
+    const list = searchLocal(query, max_price, sort, project, category);
     renderProducts(list);
-    return JSON.stringify(list.map(p => ({ sku: p.sku, name: p.name, price_clp: p.price_clp, image_url: p.image_url, description: p.description,
-      stock_here: p.stock[state.branch_id] ?? 0, restrictions: p.restrictions })));
+    document.querySelectorAll(".chip").forEach(c => c.classList.remove("on"));
+    const cap = list.slice(0, project ? 7 : 4);
+    return JSON.stringify({ shown_on_screen: list.length, products: cap.map(p => ({ sku: p.sku, name: p.name, price_clp: p.price_clp,
+      stock_here: p.stock[state.branch_id] ?? 0, restrictions: p.restrictions })) });
   },
   check_availability: async ({ sku, qty = 1 }) => {
     const p = bySku(sku);
@@ -332,7 +418,8 @@ const tools = {
     const alt = Object.values(BRANCHES).filter(b => b.id !== state.branch_id && p.stock[b.id] >= qty).sort((x, y) => distKm(state, x) - distKm(state, y));
     const others = alt.map(b => ({ branch: b.name, units: p.stock[b.id], distance_km: +distKm(state, b).toFixed(1) }));
     state.dirTo = here < qty && alt.length ? { sku, b: alt[0] } : null;
-    renderProducts([p]);
+    if (!state.shown.some(x => x.sku === sku)) state.shown = [p, ...state.shown];
+    focusCard(sku);
     return JSON.stringify({ sku, name: p.name, mode: state.mode, units_here: here, enough_here: here >= qty,
       aisle: p.aisle[state.branch_id], shelf: p.shelf[state.branch_id], other_branches_with_stock: others,
       earliest_delivery: p.pickup_only ? "Not deliverable" : deliveryDate(p.ship_days), delivery_fee_clp: p.delivery_fee,
@@ -343,6 +430,7 @@ const tools = {
     const p = bySku(sku);
     if (!p) return JSON.stringify({ error: "Unknown SKU" });
     if (fulfillment === "take_now") {
+      if (state.mode === "unknown") return JSON.stringify({ error: "Location unknown. Ask the customer if they are at home or at a store, then call set_location." });
       if (state.mode !== "at_branch") return JSON.stringify({ error: "take_now only works when the customer is at a branch. Use deliver_home or deliver_to_branch." });
       if ((p.stock[state.branch_id] ?? 0) < qty) return JSON.stringify({ error: "Not enough stock here. Offer deliver_home or deliver_to_branch for this product." });
     }
@@ -352,7 +440,7 @@ const tools = {
     ex ? ex.qty += qty : state.cart.push({ sku, qty, fulfillment, branch: fulfillment === "take_now" ? state.branch_id : undefined });
     if (fulfillment === "take_now") alertStaff("Pick order - " + BRANCHES[state.branch_id].name, `Pick ${qty} x ${p.name} - aisle ${p.aisle[state.branch_id]}, shelf ${p.shelf[state.branch_id]}`);
     if (fulfillment !== "take_now" && !state.wx) weatherFor().then(w => { if (w) { state.wx = w; renderCart(); } });
-    state.order = null; renderCart();
+    state.order = null; renderCart(); renderProducts(state.shown, false);
     return JSON.stringify({ added: `${qty} x ${p.name}`, staff_picking_started: fulfillment === "take_now", cart: cartPayload() });
   },
   get_delivery_plan: async () => {
@@ -366,15 +454,10 @@ const tools = {
     const ok = validRut(rut);
     if (!ok) return JSON.stringify({ error: "Invalid RUT. Ask the customer to repeat it and read it back." });
     state.order = { id: "ORD-" + Math.floor(1000 + Math.random() * 9000), rut: ok, paid: false };
-    const t = cartTotals();
-    if (t.online === 0) {
-      state.order.paid = true; state.order.cash_only = true; recordOrder();
-      alertStaff("Cash order - " + BRANCHES[state.branch_id].name, `${state.order.id}: customer pays ${clp(t.cash)} at the register. Items are being picked.`, ["moneybag"]);
-      renderCart();
-      return JSON.stringify({ status: "pay_at_register", cash_at_register_clp: t.cash, cart: cartPayload() });
-    }
+    const t = cartTotals(), sp = splitCart();
     renderCart();
-    return JSON.stringify({ status: "ready_to_pay_online", online_payment_clp: t.online, cash_at_register_clp: t.cash, delivery_address: state.address, cart: cartPayload() });
+    return JSON.stringify({ status: "ready_to_pay_online", online_payment_clp: t.total, pickup_items: sp.pickup.map(p => `${p.qty} x ${p.name}`),
+      delivery_batches: sp.delivery.map(d => `${d.items.join(", ")} on ${d.date}`), delivery_address: sp.delivery.length ? state.address : null, receipt_email: state.email });
   },
   show_cart: async () => { renderCart(); return JSON.stringify(cartPayload()); },
   request_human_assistance: async ({ reason }) => {
@@ -393,14 +476,19 @@ for (const k of Object.keys(tools)) {
 }
 
 function buildContext() {
-  const cartTxt = state.cart.length ? state.cart.map(i => `${i.qty} x ${bySku(i.sku).name} (${i.fulfillment})`).join("; ") : "empty";
+  const paid = !!(state.order && state.order.paid);
+  const active = paid ? [] : state.cart;
+  const cartTxt = active.length ? active.map(i => `${i.qty} x ${bySku(i.sku).name} (${i.fulfillment})`).join("; ") : "empty";
   const past = orders.length ? orders.slice(0, 3).map(o => `${o.date}: ${o.items.join(", ")}`).join(" | ") : "none";
-  const last = lastTalk.slice(-6).map(x => (x.s === "ai" ? "Sodibud: " : "Customer: ") + x.t).join(" / ").slice(0, 500) || "none";
-  const returning = state.cart.length || orders.length || lastTalk.length;
-  const where = state.mode === "at_branch" ? "at " + BRANCHES[state.branch_id].name : "shopping from home";
-  let first = "Hi, I'm Sodibud, your Sodimac assistant. Are you shopping from home or visiting one of our stores today?";
-  if (state.cart.length) first = `Welcome back! You have ${state.cart.length} item${state.cart.length > 1 ? "s" : ""} in your cart. Want to pick up where we left off? Are you still ${where}?`;
-  else if (returning) first = "Welcome back! Are you shopping from home or visiting one of our stores today?";
+  const last = lastTalk.slice(-6).map(x => (x.s === "ai" ? "Sodibud: " : "Customer: ") + x.t).join(" / ").slice(0, 400) || "none";
+  const known = $("loc").value !== "";
+  const where = !known ? "" : state.mode === "at_branch" ? BRANCHES[state.branch_id].name : "home";
+  const returning = active.length || orders.length || lastTalk.length;
+  let first;
+  if (!known) first = "Hi, I'm Sodibud, your Sodimac assistant. Are you shopping from home or visiting one of our stores today?";
+  else if (active.length) first = `Welcome back! ${active.length} item${active.length > 1 ? "s" : ""} in your cart at ${state.mode === "at_branch" ? where : "home"}. Shall we continue?`;
+  else if (paid) first = `Your order ${state.order.id} is paid. Anything else I can find for you?`;
+  else first = "Hi, I'm Sodibud. What can I help you find today?";
   return { first, vars: { returning_customer: returning ? "yes" : "no", cart_summary: cartTxt, last_conversation: last, past_purchases: past, greeting_extra: first } };
 }
 
@@ -418,7 +506,7 @@ async function toggleTalk() {
     convo = await Conversation.startSession({
       agentId: AGENT_ID,
       connectionType: "webrtc",
-      dynamicVariables: { mode: state.mode, branch_id: state.branch_id, user_lat: String(state.lat), user_lng: String(state.lng), cart_id: cartId(), ...ctx.vars },
+      dynamicVariables: { mode: ($("loc").value === "" ? "unknown" : state.mode), branch_id: state.branch_id, user_lat: String(state.lat), user_lng: String(state.lng), cart_id: cartId(), ...ctx.vars },
       ...(USE_FIRST_MESSAGE_OVERRIDE ? { overrides: { agent: { firstMessage: ctx.first } } } : {}),
       clientTools: tools,
       onConnect: () => { btn.textContent = "End conversation"; btn.classList.add("live"); },
@@ -449,18 +537,29 @@ $("cart").onclick = e => {
   $("caption").textContent = r.error ? r.error : "Removed " + r.removed;
 };
 $("qbtn").onclick = () => tools.search_products({ query: $("q").value });
+$("pl").onclick = () => $("products").scrollBy({ left: -$("products").clientWidth * 0.8 });
+$("pr").onclick = () => $("products").scrollBy({ left: $("products").clientWidth * 0.8 });
+$("chips").onclick = e => {
+  const c = e.target.closest("[data-chip]"); if (!c) return;
+  document.querySelectorAll(".chip").forEach(x => x.classList.remove("on")); c.classList.add("on");
+  state.dirTo = null; state.focus = null;
+  const [k, v] = c.dataset.chip.split(":");
+  renderProducts(k === "all" ? PRODUCTS : k === "project" ? searchLocal("", 0, "", v) : searchLocal("", 0, "", "", v));
+};
 try { PRODUCTS = await (await fetch("products.json?v=" + Date.now(), { cache: "no-store" })).json(); }
 catch (e) { $("caption").textContent = "Could not load products.json"; }
+buildChips();
 const saved = loadSaved();
 if (saved) {
   if (saved.address) state.address = saved.address;
   orders = saved.orders || []; lastTalk = saved.lastTalk || [];
-  if (saved.order && saved.order.paid) { state.cart = []; state.order = null; }
-  else { state.cart = (saved.cart || []).filter(i => bySku(i.sku)); state.order = saved.order || null; }
+  if (saved.email) state.email = saved.email;
+  state.cart = (saved.cart || []).filter(i => bySku(i.sku)); state.order = saved.order || null;
   state.cart.forEach(i => { if (i.fulfillment === "take_now") { const p = bySku(i.sku), b = i.branch || "SC"; p.stock[b] = Math.max(0, p.stock[b] - i.qty); } });
-  if (["home", "SC", "PV"].includes(saved.loc)) $("loc").value = saved.loc;
+  if (["home", "SC", "PV"].includes(saved.loc)) $("loc").value = saved.loc; else $("loc").value = "";
 }
-$("reset").onclick = () => { try { localStorage.removeItem(LS); } catch (e) {} location.reload(); };
+$("reset").onclick = async () => { try { if (convo) await convo.endSession(); localStorage.setItem(LS, JSON.stringify({ loc: $("loc").value })); } catch (e) {} location.reload(); };
+if (!saved) $("loc").value = "";
 applyLocation();
 renderCart();
 </script>
