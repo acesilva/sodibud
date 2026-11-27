@@ -260,7 +260,7 @@ function receiptHtml(o) {
       ${r.pickup.map(p => `<div class="line"><span>${p.qty} x ${esc(p.name)}</span><span class="small">aisle ${esc(p.aisle)}, shelf ${esc(p.shelf)}</span></div>`).join("")}</div>` : ""}
     ${r.delivery.length ? `<div class="sec"><b>Delivered${r.address ? " to " + esc(r.address) : ""}</b>
       ${r.delivery.map(d => `<div class="small">${esc(d.label)}: ${esc(d.date)} ${esc(d.window)}</div>${d.items.map(i => `<div class="line"><span>${esc(i)}</span></div>`).join("")}${d.restrictions.map(x => `<span class="tag bad">${esc(x)}</span>`).join("")}`).join("")}</div>` : ""}
-    <div class="small sec">Receipt sent to ${esc(r.email)} · no real charge (demo)</div></div>`;
+    <div class="small sec">${!r.email || o.mail === "none" ? "No receipt email requested" : o.mail === "pending" ? "Sending receipt to " + esc(r.email) + "…" : o.mail === "sent" ? "Receipt sent to " + esc(r.email) + " (check spam)" : "Email could not be sent (" + esc(String(o.mail)) + ")"} · no real charge (demo)</div></div>`;
 }
 function orderPanel(t) {
   const o = state.order, sp = splitCart(), hasDel = sp.delivery.length;
@@ -277,13 +277,21 @@ function orderPanel(t) {
     <div class="small">Demo payment, no real charge.</div>
     <button class="btn pay" id="paybtn">Pay ${clp(t.total)}</button></div>`;
 }
-function notifyPayment(o) {
+async function ntfyPost(body) {
+  const r = await fetch("https://ntfy.sh/", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  if (!r.ok) { const t = await r.text().catch(() => ""); throw new Error("ntfy " + r.status + " " + t.slice(0, 120)); }
+}
+async function notifyPayment(o) {
   const r = o.receipt, sc = o.scenario;
   const title = { pickup: `Paid - pick up at ${r.branch} - ${o.id}`, delivery: `Paid - home delivery - ${o.id}`, mixed: `Paid - pick up now + home delivery - ${o.id}` }[sc];
   const msg = receiptText(o);
-  const body = { topic: NTFY_TOPIC, title, message: msg, tags: ["moneybag"], priority: 4 };
-  if (r.email) body.email = r.email;
-  fetch("https://ntfy.sh/", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) }).catch(() => {});
+  try { await ntfyPost({ topic: NTFY_TOPIC, title, message: msg, tags: ["moneybag"], priority: 4 }); $("caption").textContent = "Payment alert sent."; }
+  catch (e) { console.error(e); $("caption").textContent = "Payment alert failed: " + e.message; }
+  if (!r.email) { o.mail = "none"; renderCart(); return; }
+  o.mail = "pending"; renderCart();
+  try { await ntfyPost({ topic: NTFY_TOPIC, title: "Receipt " + o.id, message: msg, email: r.email, tags: ["email"] }); o.mail = "sent"; }
+  catch (e) { console.error(e); o.mail = "failed: " + e.message; }
+  renderCart();
 }
 function payNow() {
   const t = cartTotals(), o = state.order, btn = $("paybtn");
