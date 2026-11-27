@@ -71,7 +71,7 @@ button{font:inherit;cursor:pointer}
 
   <section class="panel"><h2>Products</h2><div id="products" class="grid"><p class="empty">Ask Sodibud for a product and it will appear here.</p></div></section>
   <section class="panel"><h2>Your cart</h2><div id="cart"><p class="empty">Your cart is empty.</p></div></section>
-  <p class="note">Mock data. The cart lives in this page and resets on reload.</p>
+  <p class="note">Mock data. Your cart and history are saved in this browser. <button class="btn sm" id="reset">Start fresh</button></p>
 </main>
 
 <div id="talk">
@@ -95,6 +95,10 @@ let PRODUCTS = [];
 
 /* ====== STATE ====== */
 const state = { mode: "remote", branch_id: "", lat: -33.38, lng: -70.55, cart: [], order: null };
+const LS = "sodibud_v1";
+let orders = [], lastTalk = [], prevTalk = [];
+function save() { try { localStorage.setItem(LS, JSON.stringify({ cart: state.cart, order: state.order, loc: $("loc").value, orders, lastTalk })); } catch (e) {} }
+function loadSaved() { try { return JSON.parse(localStorage.getItem(LS) || "null"); } catch (e) { return null; } }
 const $ = id => document.getElementById(id);
 const clp = n => "$" + n.toLocaleString("es-CL");
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -176,6 +180,7 @@ function cartTotals() {
   return { items, fees, total: items + fees };
 }
 function renderCart() {
+  save();
   if (!state.cart.length) { $("cart").innerHTML = `<p class="empty">Your cart is empty.</p>`; return; }
   const t = cartTotals();
   const batches = buildPlan().map(b => `
@@ -191,7 +196,11 @@ function renderCart() {
      <div class="line"><span>Delivery</span><span>${clp(t.fees)}</span></div>
      <div class="line total"><span>Total</span><span>${clp(t.total)}</span></div>` + order;
   const pb = $("paybtn");
-  if (pb) pb.onclick = () => { state.order.paid = true; renderCart(); };
+  if (pb) pb.onclick = () => {
+    state.order.paid = true;
+    orders.unshift({ id: state.order.id, date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" }), items: state.cart.map(i => `${i.qty} x ${bySku(i.sku).name}`) });
+    orders = orders.slice(0, 5); renderCart();
+  };
 }
 function cartPayload() {
   const t = cartTotals();
@@ -229,13 +238,21 @@ function removeItem(sku, fulfillment, qty) {
   const it = state.cart.find(i => i.sku === sku && (!fulfillment || i.fulfillment === fulfillment));
   if (!it) return { error: "That product is not in the cart." };
   const n = qty && qty < it.qty ? qty : it.qty;
-  if (it.fulfillment === "take_now") bySku(sku).stock[state.branch_id] += n;
+  if (it.fulfillment === "take_now") bySku(sku).stock[it.branch || state.branch_id] += n;
   it.qty -= n;
   if (it.qty <= 0) state.cart.splice(state.cart.indexOf(it), 1);
   state.order = null; renderCart();
   return { removed: `${n} x ${bySku(sku).name}`, cart: cartPayload() };
 }
 const tools = {
+  set_location: async ({ mode, branch_id }) => {
+    if (mode === "at_branch") {
+      const b = BRANCHES[branch_id] || BRANCHES[state.branch_id] || BRANCHES.SC;
+      state.lat = b.lat; state.lng = b.lng; $("loc").value = b.id;
+    } else { state.lat = -33.38; state.lng = -70.55; $("loc").value = "home"; }
+    finishLocation();
+    return JSON.stringify({ mode: state.mode, branch_id: state.branch_id, branch: BRANCHES[state.branch_id].name });
+  },
   remove_from_cart: async ({ sku, qty, fulfillment }) => JSON.stringify(removeItem(sku, fulfillment, qty)),
   search_products: async ({ query, max_price, sort }) => {
     const list = searchLocal(query, max_price, sort);
@@ -265,7 +282,7 @@ const tools = {
     if (fulfillment === "deliver_home" && p.pickup_only) return JSON.stringify({ error: "This product is pickup only, no home delivery." });
     if (fulfillment === "take_now") p.stock[state.branch_id] -= qty;
     const ex = state.cart.find(i => i.sku === sku && i.fulfillment === fulfillment);
-    ex ? ex.qty += qty : state.cart.push({ sku, qty, fulfillment });
+    ex ? ex.qty += qty : state.cart.push({ sku, qty, fulfillment, branch: fulfillment === "take_now" ? state.branch_id : undefined });
     state.order = null; renderCart();
     return JSON.stringify({ added: `${qty} x ${p.name}`, staff_picking_started: fulfillment === "take_now", cart: cartPayload() });
   },
@@ -297,6 +314,18 @@ for (const k of Object.keys(tools)) {
   };
 }
 
+function buildContext() {
+  const cartTxt = state.cart.length ? state.cart.map(i => `${i.qty} x ${bySku(i.sku).name} (${i.fulfillment})`).join("; ") : "empty";
+  const past = orders.length ? orders.slice(0, 3).map(o => `${o.date}: ${o.items.join(", ")}`).join(" | ") : "none";
+  const last = lastTalk.slice(-6).map(x => (x.s === "ai" ? "Sodibud: " : "Customer: ") + x.t).join(" / ").slice(0, 500) || "none";
+  const returning = state.cart.length || orders.length || lastTalk.length;
+  const where = state.mode === "at_branch" ? "at " + BRANCHES[state.branch_id].name : "shopping from home";
+  let first = "Hi, I'm Sodibud, your Sodimac assistant. Are you shopping from home or visiting one of our stores today?";
+  if (state.cart.length) first = `Welcome back! You have ${state.cart.length} item${state.cart.length > 1 ? "s" : ""} in your cart. Want to pick up where we left off? Are you still ${where}?`;
+  else if (returning) first = "Welcome back! Are you shopping from home or visiting one of our stores today?";
+  return { first, vars: { returning_customer: returning ? "yes" : "no", cart_summary: cartTxt, last_conversation: last, past_purchases: past } };
+}
+
 /* ====== VOICE SESSION ====== */
 let convo = null;
 async function toggleTalk() {
@@ -307,14 +336,17 @@ async function toggleTalk() {
   catch (e) { $("caption").textContent = "Microphone permission is needed to talk."; return; }
   try {
     btn.textContent = "Connecting…";
+    const ctx = buildContext(); prevTalk = lastTalk; lastTalk = [];
     convo = await Conversation.startSession({
       agentId: AGENT_ID,
       connectionType: "webrtc",
-      dynamicVariables: { mode: state.mode, branch_id: state.branch_id, user_lat: String(state.lat), user_lng: String(state.lng), cart_id: cartId() },
+      dynamicVariables: { mode: state.mode, branch_id: state.branch_id, user_lat: String(state.lat), user_lng: String(state.lng), cart_id: cartId(), ...ctx.vars },
+      overrides: { agent: { firstMessage: ctx.first } },
       clientTools: tools,
       onConnect: () => { btn.textContent = "End conversation"; btn.classList.add("live"); },
-      onDisconnect: () => { convo = null; btn.textContent = "Talk to Sodibud"; btn.classList.remove("live"); $("caption").textContent = ""; },
-      onMessage: m => { if (m.message) $("caption").textContent = (m.source === "ai" ? "Sodibud: " : "You: ") + m.message; },
+      onDisconnect: () => { if (!lastTalk.length) lastTalk = prevTalk; save(); convo = null; btn.textContent = "Talk to Sodibud"; btn.classList.remove("live"); $("caption").textContent = ""; },
+      onMessage: m => { if (m.message) { lastTalk.push({ s: m.source, t: m.message }); lastTalk = lastTalk.slice(-10); }
+        if (m.message) $("caption").textContent = (m.source === "ai" ? "Sodibud: " : "You: ") + m.message; },
       onError: e => { $("caption").textContent = "Connection problem: " + (typeof e === "string" ? e : (e && e.message) || "see console"); console.error(e); }
     });
   } catch (e) {
@@ -341,6 +373,15 @@ $("cart").onclick = e => {
 $("qbtn").onclick = () => tools.search_products({ query: $("q").value });
 try { PRODUCTS = await (await fetch("products.json")).json(); }
 catch (e) { $("caption").textContent = "Could not load products.json"; }
+const saved = loadSaved();
+if (saved) {
+  orders = saved.orders || []; lastTalk = saved.lastTalk || [];
+  if (saved.order && saved.order.paid) { state.cart = []; state.order = null; }
+  else { state.cart = (saved.cart || []).filter(i => bySku(i.sku)); state.order = saved.order || null; }
+  state.cart.forEach(i => { if (i.fulfillment === "take_now") { const p = bySku(i.sku), b = i.branch || "SC"; p.stock[b] = Math.max(0, p.stock[b] - i.qty); } });
+  if (["home", "SC", "PV"].includes(saved.loc)) $("loc").value = saved.loc;
+}
+$("reset").onclick = () => { try { localStorage.removeItem(LS); } catch (e) {} location.reload(); };
 applyLocation();
 renderCart();
 </script>
