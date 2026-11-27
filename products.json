@@ -662,5 +662,607 @@
   "restrictions": [],
   "delivery_fee": 3990,
   "pickup_only": false
+ },
+ {
+  "sku": "PAINT-EXT-GRN",
+  "name": "Exterior Paint 4 L, green",
+  "category": "Paint",
+  "price_clp": 31990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22125%22%20width%3D%22140%22%20height%3D%22115%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22112%22%20width%3D%22160%22%20height%3D%2222%22%20rx%3D%226%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22160%22%20width%3D%22140%22%20height%3D%2248%22%20rx%3D%220%22%20fill%3D%22%232f9e44%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M138%20120%20Q200%2044%20262%20120%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Ctext%20x%3D%22200%22%20y%3D%22192%22%20font-family%3D%22Arial%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%3EEXT%3C/text%3E%3C/svg%3E",
+  "description": "Weatherproof acrylic exterior paint, green, 4 liters.",
+  "tags": "pintura exterior verde house casa fachada",
+  "stock": {
+   "SC": 0,
+   "PV": 6
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "B",
+   "PV": "C"
+  },
+  "ship_days": 3,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "PAINT-EXT-WHT",
+  "name": "Exterior Paint 4 L, white",
+  "category": "Paint",
+  "price_clp": 29990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22125%22%20width%3D%22140%22%20height%3D%22115%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22112%22%20width%3D%22160%22%20height%3D%2222%22%20rx%3D%226%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22160%22%20width%3D%22140%22%20height%3D%2248%22%20rx%3D%220%22%20fill%3D%22%23dfe5ea%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M138%20120%20Q200%2044%20262%20120%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Ctext%20x%3D%22200%22%20y%3D%22192%22%20font-family%3D%22Arial%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%3EEXT%3C/text%3E%3C/svg%3E",
+  "description": "Weatherproof acrylic exterior paint, white, 4 liters.",
+  "tags": "pintura exterior blanca house casa fachada",
+  "stock": {
+   "SC": 9,
+   "PV": 11
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "B",
+   "PV": "C"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "PAINT-EXT-GRY",
+  "name": "Exterior Paint 4 L, grey",
+  "category": "Paint",
+  "price_clp": 30990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22125%22%20width%3D%22140%22%20height%3D%22115%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22112%22%20width%3D%22160%22%20height%3D%2222%22%20rx%3D%226%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22160%22%20width%3D%22140%22%20height%3D%2248%22%20rx%3D%220%22%20fill%3D%22%237b8794%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M138%20120%20Q200%2044%20262%20120%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Ctext%20x%3D%22200%22%20y%3D%22192%22%20font-family%3D%22Arial%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%3EEXT%3C/text%3E%3C/svg%3E",
+  "description": "Weatherproof acrylic exterior paint, grey, 4 liters.",
+  "tags": "pintura exterior gris house casa fachada",
+  "stock": {
+   "SC": 5,
+   "PV": 0
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "B",
+   "PV": "C"
+  },
+  "ship_days": 2,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "PAINT-INT-BLU",
+  "name": "Interior Paint 4 L, blue",
+  "category": "Paint",
+  "price_clp": 26990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22125%22%20width%3D%22140%22%20height%3D%22115%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22112%22%20width%3D%22160%22%20height%3D%2222%22%20rx%3D%226%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22160%22%20width%3D%22140%22%20height%3D%2248%22%20rx%3D%220%22%20fill%3D%22%233b82c4%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M138%20120%20Q200%2044%20262%20120%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Ctext%20x%3D%22200%22%20y%3D%22192%22%20font-family%3D%22Arial%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%3EINT%3C/text%3E%3C/svg%3E",
+  "description": "Washable matte interior paint, blue, 4 liters.",
+  "tags": "pintura interior azul",
+  "stock": {
+   "SC": 7,
+   "PV": 4
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "A",
+   "PV": "B"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "PAINT-INT-GRY",
+  "name": "Interior Paint 1 L, light grey",
+  "category": "Paint",
+  "price_clp": 9990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22125%22%20width%3D%22140%22%20height%3D%22115%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22112%22%20width%3D%22160%22%20height%3D%2222%22%20rx%3D%226%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22160%22%20width%3D%22140%22%20height%3D%2248%22%20rx%3D%220%22%20fill%3D%22%23a8b3be%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M138%20120%20Q200%2044%20262%20120%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Ctext%20x%3D%22200%22%20y%3D%22192%22%20font-family%3D%22Arial%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%3EINT%3C/text%3E%3C/svg%3E",
+  "description": "Washable matte interior paint, light grey, 1 liter.",
+  "tags": "pintura interior gris",
+  "stock": {
+   "SC": 15,
+   "PV": 10
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "A",
+   "PV": "B"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "ENAMEL-GRN",
+  "name": "Wood & Metal Enamel 1 L, green",
+  "category": "Paint",
+  "price_clp": 12990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22125%22%20width%3D%22140%22%20height%3D%22115%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22112%22%20width%3D%22160%22%20height%3D%2222%22%20rx%3D%226%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22160%22%20width%3D%22140%22%20height%3D%2248%22%20rx%3D%220%22%20fill%3D%22%232b8a3e%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M138%20120%20Q200%2044%20262%20120%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Ctext%20x%3D%22200%22%20y%3D%22192%22%20font-family%3D%22Arial%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%3EENAMEL%3C/text%3E%3C/svg%3E",
+  "description": "Glossy enamel for doors, fences and railings, green, 1 liter.",
+  "tags": "esmalte verde madera metal reja puerta",
+  "stock": {
+   "SC": 8,
+   "PV": 5
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "E",
+   "PV": "D"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "PRIMER-4L",
+  "name": "Sealer Primer 4 L, white",
+  "category": "Paint",
+  "price_clp": 19990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22125%22%20width%3D%22140%22%20height%3D%22115%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22112%22%20width%3D%22160%22%20height%3D%2222%22%20rx%3D%226%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22160%22%20width%3D%22140%22%20height%3D%2248%22%20rx%3D%220%22%20fill%3D%22%23e9edf1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M138%20120%20Q200%2044%20262%20120%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Ctext%20x%3D%22200%22%20y%3D%22192%22%20font-family%3D%22Arial%22%20font-weight%3D%22700%22%20font-size%3D%2222%22%20text-anchor%3D%22middle%22%20fill%3D%22%23ffffff%22%3EPRIMER%3C/text%3E%3C/svg%3E",
+  "description": "Primer for bare walls, apply before painting. 4 liters.",
+  "tags": "base imprimante sellador",
+  "stock": {
+   "SC": 10,
+   "PV": 8
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "C",
+   "PV": "A"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "SPRAY-GRN",
+  "name": "Spray Paint 400 ml, green",
+  "category": "Paint",
+  "price_clp": 5990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22160%22%20y%3D%22110%22%20width%3D%2280%22%20height%3D%22140%22%20rx%3D%2216%22%20fill%3D%22%232b8a3e%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22175%22%20y%3D%2282%22%20width%3D%2250%22%20height%3D%2232%22%20rx%3D%226%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22190%22%20y%3D%2256%22%20width%3D%2220%22%20height%3D%2228%22%20rx%3D%224%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22160%22%20y%3D%22165%22%20width%3D%2280%22%20height%3D%2234%22%20rx%3D%220%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/svg%3E",
+  "description": "Quick-dry spray paint for small jobs, green, 400 ml.",
+  "tags": "aerosol pintura verde",
+  "stock": {
+   "SC": 25,
+   "PV": 18
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "F",
+   "PV": "E"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "BRUSH-SET",
+  "name": "Paintbrush Set 3 pieces",
+  "category": "Paint",
+  "price_clp": 6990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22180%22%20y%3D%2248%22%20width%3D%2240%22%20height%3D%22100%22%20rx%3D%2210%22%20fill%3D%22%23d9a066%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22170%22%20y%3D%22140%22%20width%3D%2260%22%20height%3D%2228%22%20rx%3D%224%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22172%22%20y%3D%22166%22%20width%3D%2211%22%20height%3D%2264%22%20rx%3D%223%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22185%22%20y%3D%22166%22%20width%3D%2211%22%20height%3D%2264%22%20rx%3D%223%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22198%22%20y%3D%22166%22%20width%3D%2211%22%20height%3D%2264%22%20rx%3D%223%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22211%22%20y%3D%22166%22%20width%3D%2211%22%20height%3D%2264%22%20rx%3D%223%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22224%22%20y%3D%22166%22%20width%3D%2211%22%20height%3D%2264%22%20rx%3D%223%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/svg%3E",
+  "description": "Three brushes: 1, 2 and 3 inch.",
+  "tags": "brochas pinceles",
+  "stock": {
+   "SC": 30,
+   "PV": 22
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "D",
+   "PV": "D"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "DROP-CLOTH",
+  "name": "Drop Cloth 4 x 5 m",
+  "category": "Paint",
+  "price_clp": 3990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cpolygon%20points%3D%22100%2C230%20130%2C100%20300%2C100%20270%2C230%22%20fill%3D%22%23e8e2d2%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M130%20100%20L150%20230%22%20fill%3D%22none%22%20stroke%3D%22%239aa5b1%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M200%20100%20L215%20230%22%20fill%3D%22none%22%20stroke%3D%22%239aa5b1%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M110%20165%20L290%20165%22%20fill%3D%22none%22%20stroke%3D%22%239aa5b1%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E",
+  "description": "Plastic sheet to protect floors and furniture.",
+  "tags": "plastico proteccion",
+  "stock": {
+   "SC": 35,
+   "PV": 28
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "D",
+   "PV": "D"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "SAND-10",
+  "name": "Sandpaper Sheets, pack of 10",
+  "category": "Paint",
+  "price_clp": 3490,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cg%20transform%3D%22rotate%28-14%20200%20160%29%22%3E%3Crect%20x%3D%22130%22%20y%3D%22110%22%20width%3D%22140%22%20height%3D%22100%22%20rx%3D%220%22%20fill%3D%22%23d8b26e%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M140%20130%20L260%20130%22%20fill%3D%22none%22%20stroke%3D%22%23e8590c%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%280%20200%20160%29%22%3E%3Crect%20x%3D%22130%22%20y%3D%22110%22%20width%3D%22140%22%20height%3D%22100%22%20rx%3D%220%22%20fill%3D%22%23d8b26e%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M140%20130%20L260%20130%22%20fill%3D%22none%22%20stroke%3D%22%23e8590c%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%2814%20200%20160%29%22%3E%3Crect%20x%3D%22130%22%20y%3D%22110%22%20width%3D%22140%22%20height%3D%22100%22%20rx%3D%220%22%20fill%3D%22%23d8b26e%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M140%20130%20L260%20130%22%20fill%3D%22none%22%20stroke%3D%22%23e8590c%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3C/svg%3E",
+  "description": "Mixed grit sandpaper for walls and wood.",
+  "tags": "lija",
+  "stock": {
+   "SC": 40,
+   "PV": 30
+  },
+  "aisle": {
+   "SC": "20",
+   "PV": "18"
+  },
+  "shelf": {
+   "SC": "F",
+   "PV": "F"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "LEVEL-60",
+  "name": "Spirit Level 60 cm",
+  "category": "Hand Tools",
+  "price_clp": 9990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%2270%22%20y%3D%22130%22%20width%3D%22260%22%20height%3D%2252%22%20rx%3D%220%22%20fill%3D%22%23f2c230%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22170%22%20y%3D%22144%22%20width%3D%2260%22%20height%3D%2224%22%20rx%3D%220%22%20fill%3D%22%23d7f5d7%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22156%22%20r%3D%228%22%20fill%3D%22%232b8a3e%22/%3E%3Cpath%20d%3D%22M170%20144%20L170%20168%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M230%20144%20L230%20168%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E",
+  "description": "Aluminium level with three vials.",
+  "tags": "nivel",
+  "stock": {
+   "SC": 12,
+   "PV": 9
+  },
+  "aisle": {
+   "SC": "17",
+   "PV": "14"
+  },
+  "shelf": {
+   "SC": "C",
+   "PV": "B"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "KNIFE-UT",
+  "name": "Utility Knife",
+  "category": "Hand Tools",
+  "price_clp": 3990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22100%22%20y%3D%22130%22%20width%3D%22170%22%20height%3D%2248%22%20rx%3D%2210%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpolygon%20points%3D%22270%2C135%20345%2C150%20270%2C172%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22142%22%20width%3D%2260%22%20height%3D%2210%22%20rx%3D%224%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/svg%3E",
+  "description": "Retractable knife with spare blades.",
+  "tags": "cuchillo cortador cartonero",
+  "stock": {
+   "SC": 30,
+   "PV": 20
+  },
+  "aisle": {
+   "SC": "17",
+   "PV": "14"
+  },
+  "shelf": {
+   "SC": "B",
+   "PV": "C"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "HANDSAW",
+  "name": "Hand Saw 20 in",
+  "category": "Hand Tools",
+  "price_clp": 8990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cpolygon%20points%3D%2285%2C100%20330%2C100%20330%2C160%2085%2C200%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpolygon%20points%3D%22100%2C120%20110%2C130%20120%2C120%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22120%2C124%20130%2C134%20140%2C124%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22140%2C128%20150%2C138%20160%2C128%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22160%2C132%20170%2C142%20180%2C132%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22180%2C136%20190%2C146%20200%2C136%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22200%2C140%20210%2C150%20220%2C140%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22220%2C144%20230%2C154%20240%2C144%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22240%2C148%20250%2C158%20260%2C148%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22260%2C152%20270%2C162%20280%2C152%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22280%2C156%20290%2C166%20300%2C156%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22300%2C160%20310%2C170%20320%2C160%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22300%22%20y%3D%2295%22%20width%3D%2262%22%20height%3D%2296%22%20rx%3D%2218%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/svg%3E",
+  "description": "Fine-tooth hand saw for wood.",
+  "tags": "serrucho",
+  "stock": {
+   "SC": 10,
+   "PV": 6
+  },
+  "aisle": {
+   "SC": "17",
+   "PV": "14"
+  },
+  "shelf": {
+   "SC": "A",
+   "PV": "A"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "GOGGLES",
+  "name": "Safety Goggles",
+  "category": "Safety",
+  "price_clp": 4990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%2280%22%20y%3D%22115%22%20width%3D%22240%22%20height%3D%2280%22%20rx%3D%2236%22%20fill%3D%22%23cfe8ff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M200%20115%20L200%20195%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M80%20150%20L50%20150%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M320%20150%20L350%20150%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E",
+  "description": "Clear anti-scratch safety goggles.",
+  "tags": "lentes proteccion",
+  "stock": {
+   "SC": 30,
+   "PV": 25
+  },
+  "aisle": {
+   "SC": "30",
+   "PV": "27"
+  },
+  "shelf": {
+   "SC": "B",
+   "PV": "A"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "HELMET",
+  "name": "Hard Hat",
+  "category": "Safety",
+  "price_clp": 7990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cpath%20d%3D%22M95%20210%20Q95%2085%20200%2085%20Q305%2085%20305%20210%20Z%22%20fill%3D%22%23f2c230%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%2270%22%20y%3D%22208%22%20width%3D%22260%22%20height%3D%2226%22%20rx%3D%228%22%20fill%3D%22%23f2c230%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22180%22%20y%3D%2285%22%20width%3D%2240%22%20height%3D%22125%22%20rx%3D%226%22%20fill%3D%22%23f2c230%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/svg%3E",
+  "description": "Adjustable construction helmet, yellow.",
+  "tags": "casco",
+  "stock": {
+   "SC": 14,
+   "PV": 10
+  },
+  "aisle": {
+   "SC": "30",
+   "PV": "27"
+  },
+  "shelf": {
+   "SC": "C",
+   "PV": "B"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "MASK-DUST",
+  "name": "Dust Masks, pack of 10",
+  "category": "Safety",
+  "price_clp": 4490,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cg%20transform%3D%22translate%2895%2070%29%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%22%20height%3D%2270%22%20rx%3D%2230%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M0%2035%20L-22%2020%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M100%2035%20L122%2020%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28205%20110%29%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%22%20height%3D%2270%22%20rx%3D%2230%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M0%2035%20L-22%2020%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M100%2035%20L122%2020%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28110%20170%29%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22100%22%20height%3D%2270%22%20rx%3D%2230%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M0%2035%20L-22%2020%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M100%2035%20L122%2020%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/g%3E%3C/svg%3E",
+  "description": "Disposable masks for dust, sanding and painting.",
+  "tags": "mascarilla",
+  "stock": {
+   "SC": 50,
+   "PV": 40
+  },
+  "aisle": {
+   "SC": "30",
+   "PV": "27"
+  },
+  "shelf": {
+   "SC": "D",
+   "PV": "C"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "SHELF-BRK",
+  "name": "Shelf Brackets, pair",
+  "category": "Fasteners",
+  "price_clp": 5990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cpolygon%20points%3D%22110%2C80%20132%2C80%20132%2C200%20220%2C200%20220%2C222%20110%2C222%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpolygon%20points%3D%22215%2C80%20237%2C80%20237%2C200%20325%2C200%20325%2C222%20215%2C222%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/svg%3E",
+  "description": "Steel L brackets, 20 cm, with screws.",
+  "tags": "soporte repisa",
+  "stock": {
+   "SC": 24,
+   "PV": 16
+  },
+  "aisle": {
+   "SC": "12",
+   "PV": "9"
+  },
+  "shelf": {
+   "SC": "F",
+   "PV": "E"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "SHELF-PINE",
+  "name": "Floating Shelf 80 cm, pine",
+  "category": "Lumber",
+  "price_clp": 15990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%2275%22%20y%3D%22140%22%20width%3D%22250%22%20height%3D%2232%22%20rx%3D%220%22%20fill%3D%22%23d9a066%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%2275%22%20y%3D%22172%22%20width%3D%22250%22%20height%3D%2210%22%20rx%3D%223%22%20fill%3D%22%23b9824a%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22156%22%20r%3D%225%22%20fill%3D%22%231d2733%22/%3E%3Ccircle%20cx%3D%22280%22%20cy%3D%22156%22%20r%3D%225%22%20fill%3D%22%231d2733%22/%3E%3C/svg%3E",
+  "description": "Pine shelf board, 80 cm, ready to hang.",
+  "tags": "repisa estante",
+  "stock": {
+   "SC": 9,
+   "PV": 4
+  },
+  "aisle": {
+   "SC": "Yard 2",
+   "PV": "Yard 1"
+  },
+  "shelf": {
+   "SC": "Rack 3",
+   "PV": "Rack 3"
+  },
+  "ship_days": 2,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "SILICONE",
+  "name": "Silicone Sealant",
+  "category": "Plumbing",
+  "price_clp": 4490,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22110%22%20y%3D%22140%22%20width%3D%22170%22%20height%3D%2256%22%20rx%3D%220%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpolygon%20points%3D%22280%2C140%20345%2C160%20345%2C176%20280%2C196%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22110%22%20y%3D%22140%22%20width%3D%2236%22%20height%3D%2256%22%20rx%3D%220%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M345%20168%20L372%20168%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E",
+  "description": "Waterproof silicone sealant, 280 ml.",
+  "tags": "sellador",
+  "stock": {
+   "SC": 26,
+   "PV": 18
+  },
+  "aisle": {
+   "SC": "25",
+   "PV": "22"
+  },
+  "shelf": {
+   "SC": "C",
+   "PV": "B"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "WOODGLUE",
+  "name": "Wood Glue 500 g",
+  "category": "Fasteners",
+  "price_clp": 3990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22150%22%20y%3D%22120%22%20width%3D%22100%22%20height%3D%22130%22%20rx%3D%2218%22%20fill%3D%22%23f4f0e6%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22180%22%20y%3D%2278%22%20width%3D%2240%22%20height%3D%2246%22%20rx%3D%226%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22160%22%20y%3D%22165%22%20width%3D%2280%22%20height%3D%2250%22%20rx%3D%224%22%20fill%3D%22%23f2c230%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/svg%3E",
+  "description": "Strong PVA wood glue, 500 g.",
+  "tags": "cola fria pegamento",
+  "stock": {
+   "SC": 32,
+   "PV": 20
+  },
+  "aisle": {
+   "SC": "12",
+   "PV": "9"
+  },
+  "shelf": {
+   "SC": "E",
+   "PV": "D"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "SHOVEL",
+  "name": "Garden Shovel",
+  "category": "Garden",
+  "price_clp": 12990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cpath%20d%3D%22M200%2040%20L200%20180%22%20fill%3D%22none%22%20stroke%3D%22%23d9a066%22%20stroke-width%3D%2214%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Crect%20x%3D%22175%22%20y%3D%2228%22%20width%3D%2250%22%20height%3D%2222%22%20rx%3D%226%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M150%20180%20Q200%20160%20250%20180%20L235%20250%20Q200%20270%20165%20250%20Z%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/svg%3E",
+  "description": "Steel shovel with wooden handle.",
+  "tags": "pala jardin",
+  "stock": {
+   "SC": 8,
+   "PV": 6
+  },
+  "aisle": {
+   "SC": "Garden",
+   "PV": "Garden"
+  },
+  "shelf": {
+   "SC": "A",
+   "PV": "A"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "SPRINKLER",
+  "name": "Garden Sprinkler",
+  "category": "Garden",
+  "price_clp": 7990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22160%22%20y%3D%22200%22%20width%3D%2280%22%20height%3D%2236%22%20rx%3D%228%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22190%22%20y%3D%22130%22%20width%3D%2220%22%20height%3D%2272%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M200%20128%20L140%2070%22%20fill%3D%22none%22%20stroke%3D%22%232f80ed%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M200%20128%20L170%2052%22%20fill%3D%22none%22%20stroke%3D%22%232f80ed%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M200%20128%20L200%2046%22%20fill%3D%22none%22%20stroke%3D%22%232f80ed%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M200%20128%20L230%2052%22%20fill%3D%22none%22%20stroke%3D%22%232f80ed%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M200%20128%20L260%2070%22%20fill%3D%22none%22%20stroke%3D%22%232f80ed%22%20stroke-width%3D%225%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22128%22%20r%3D%2210%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/svg%3E",
+  "description": "Oscillating lawn sprinkler.",
+  "tags": "regador aspersor",
+  "stock": {
+   "SC": 12,
+   "PV": 9
+  },
+  "aisle": {
+   "SC": "Garden",
+   "PV": "Garden"
+  },
+  "shelf": {
+   "SC": "B",
+   "PV": "B"
+  },
+  "ship_days": 1,
+  "restrictions": [],
+  "delivery_fee": 3990,
+  "pickup_only": false
+ },
+ {
+  "sku": "LADDER-6",
+  "name": "Step Ladder, 6 steps",
+  "category": "Power Tools",
+  "price_clp": 49990,
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cpath%20d%3D%22M150%20235%20L175%2055%22%20fill%3D%22none%22%20stroke%3D%22%239aa5b1%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M250%20235%20L225%2055%22%20fill%3D%22none%22%20stroke%3D%22%239aa5b1%22%20stroke-width%3D%2212%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M158%2090%20L242%2090%22%20fill%3D%22none%22%20stroke%3D%22%23e8590c%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M158%20125%20L242%20125%22%20fill%3D%22none%22%20stroke%3D%22%23e8590c%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M158%20160%20L242%20160%22%20fill%3D%22none%22%20stroke%3D%22%23e8590c%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Cpath%20d%3D%22M158%20195%20L242%20195%22%20fill%3D%22none%22%20stroke%3D%22%23e8590c%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3C/svg%3E",
+  "description": "Aluminium step ladder, 6 steps, up to 150 kg.",
+  "tags": "escalera",
+  "stock": {
+   "SC": 4,
+   "PV": 3
+  },
+  "aisle": {
+   "SC": "12",
+   "PV": "9"
+  },
+  "shelf": {
+   "SC": "Floor",
+   "PV": "Floor"
+  },
+  "ship_days": 3,
+  "restrictions": [
+   "bulky"
+  ],
+  "delivery_fee": 9990,
+  "pickup_only": false
  }
 ]
