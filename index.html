@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sodibud – concept demo</title>
+<title>Sodibud</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
@@ -68,7 +68,7 @@ a.btn{text-decoration:none;display:inline-block}
 <body>
 <header>
   <h1><span>Sodi</span>bud</h1>
-  <p>Your smart warehouse assistant and cashier. Concept demo with mock data, not an official Sodimac product.</p>
+  <p>Your smart warehouse assistant and cashier.</p>
 </header>
 <main>
   <section class="panel">
@@ -90,7 +90,7 @@ a.btn{text-decoration:none;display:inline-block}
 
   <section class="panel"><h2>Products <span id="pcount" class="small"></span></h2><div class="chips" id="chips"></div><div class="car"><button class="arr" id="pl" aria-label="Previous products">‹</button><div id="products" class="track"><p class="empty">Ask Sodibud for a product and it will appear here.</p></div><button class="arr" id="pr" aria-label="Next products">›</button></div></section>
   <section class="panel"><h2>Your cart</h2><div id="cart"><p class="empty">Your cart is empty.</p></div></section>
-  <p class="note">Mock data. Your cart and history are saved in this browser (your location is kept). <button class="btn sm" id="reset">Start fresh</button></p>
+  <p class="note">Your cart is saved in this browser. <button class="btn sm" id="reset">Start fresh</button></p>
 </main>
 
 <div id="talk">
@@ -251,7 +251,7 @@ function receiptText(o) {
   const r = o.receipt, L = [`Sodibud receipt ${o.id}`, `Paid ${clp(r.total)} on ${r.when}`, ""];
   if (r.pickup.length) { L.push(`PICK UP at ${r.branch} - show this receipt, code ${o.id}`); r.pickup.forEach(p => L.push(`- ${p.qty} x ${p.name} (aisle ${p.aisle}, shelf ${p.shelf})`)); L.push(""); }
   if (r.delivery.length) { L.push(r.address ? `DELIVERY to ${r.address}` : "DELIVERY"); r.delivery.forEach(d => { L.push(`${d.label}: ${d.date} ${d.window}`.trim()); d.items.forEach(i => L.push(`- ${i}`)); }); L.push(""); }
-  L.push("Concept demo, no real charge."); return L.join("\n");
+  return L.join("\n").trim();
 }
 function receiptHtml(o) {
   const r = o.receipt;
@@ -260,7 +260,7 @@ function receiptHtml(o) {
       ${r.pickup.map(p => `<div class="line"><span>${p.qty} x ${esc(p.name)}</span><span class="small">aisle ${esc(p.aisle)}, shelf ${esc(p.shelf)}</span></div>`).join("")}</div>` : ""}
     ${r.delivery.length ? `<div class="sec"><b>Delivered${r.address ? " to " + esc(r.address) : ""}</b>
       ${r.delivery.map(d => `<div class="small">${esc(d.label)}: ${esc(d.date)} ${esc(d.window)}</div>${d.items.map(i => `<div class="line"><span>${esc(i)}</span></div>`).join("")}${d.restrictions.map(x => `<span class="tag bad">${esc(x)}</span>`).join("")}`).join("")}</div>` : ""}
-    <div class="small sec">${!r.email || o.mail === "none" ? "No receipt email requested" : o.mail === "pending" ? "Sending receipt to " + esc(r.email) + "…" : o.mail === "sent" ? "Receipt sent to " + esc(r.email) + " (check spam)" : "Email could not be sent (" + esc(String(o.mail)) + ")"} · no real charge (demo)</div></div>`;
+    <div class="small sec">${!r.email || o.mail === "none" ? "No receipt email requested" : o.mail === "pending" ? "Sending receipt to " + esc(r.email) + "…" : o.mail === "sent" ? "Receipt sent to " + esc(r.email) + " (check spam)" : "Email could not be sent (" + esc(String(o.mail)) + ")"}</div></div>`;
 }
 function orderPanel(t) {
   const o = state.order, sp = splitCart(), hasDel = sp.delivery.length;
@@ -273,9 +273,20 @@ function orderPanel(t) {
     <label class="small">Send receipt to</label><input type="text" id="mail" value="${esc(state.email)}" inputmode="email">
     <label class="small">Card number</label><input type="text" id="cnum" value="4242 4242 4242 4242" inputmode="numeric">
     <div class="row"><input type="text" id="cexp" value="12/30" aria-label="Expiry"><input type="text" id="ccvc" value="123" aria-label="CVC"></div>
-    <input type="text" id="cname" value="Demo Customer" aria-label="Name on card">
-    <div class="small">Demo payment, no real charge.</div>
+    <input type="text" id="cname" value="Alexis Acevedo" aria-label="Name on card">
     <button class="btn pay" id="paybtn">Pay ${clp(t.total)}</button></div>`;
+}
+/* EmailJS: fill these three to send real receipt emails (see instructions). Leave empty to try ntfy's email instead. */
+const EMAILJS = { service_id: "service_ansx7jn", template_id: "template_w3535jb", public_key: "AYIZ29A-8P39Js0Mk" };
+async function emailReceipt(to, o, msg) {
+  if (EMAILJS.service_id && EMAILJS.template_id && EMAILJS.public_key) {
+    const r = await fetch("https://api.emailjs.com/api/v1.0/email/send", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ service_id: EMAILJS.service_id, template_id: EMAILJS.template_id, user_id: EMAILJS.public_key,
+        template_params: { to_email: to, order_id: o.id, subject: "Your Sodibud receipt " + o.id, message: msg } }) });
+    if (!r.ok) throw new Error("EmailJS " + r.status + " " + (await r.text().catch(() => "")).slice(0, 100));
+    return;
+  }
+  await ntfyPost({ topic: NTFY_TOPIC, title: "Receipt " + o.id, message: msg, email: to, tags: ["email"] });
 }
 async function ntfyPost(body) {
   const r = await fetch("https://ntfy.sh/", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
@@ -289,13 +300,13 @@ async function notifyPayment(o) {
   catch (e) { console.error(e); $("caption").textContent = "Payment alert failed: " + e.message; }
   if (!r.email) { o.mail = "none"; renderCart(); return; }
   o.mail = "pending"; renderCart();
-  try { await ntfyPost({ topic: NTFY_TOPIC, title: "Receipt " + o.id, message: msg, email: r.email, tags: ["email"] }); o.mail = "sent"; }
+  try { await emailReceipt(r.email, o, msg); o.mail = "sent"; }
   catch (e) { console.error(e); o.mail = "failed: " + e.message; }
   renderCart();
 }
 function payNow() {
   const t = cartTotals(), o = state.order, btn = $("paybtn");
-  if ((($("cnum").value || "").replace(/\D/g, "")).length < 13) { $("caption").textContent = "Enter a valid card number (demo: 4242 4242 4242 4242)."; return; }
+  if ((($("cnum").value || "").replace(/\D/g, "")).length < 13) { $("caption").textContent = "Enter a valid card number."; return; }
   const em = ($("mail").value || "").trim();
   if (em && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) { $("caption").textContent = "That email address looks wrong."; return; }
   state.email = em; btn.disabled = true; btn.textContent = "Processing…";
