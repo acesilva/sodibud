@@ -4,7 +4,7 @@
   "name": "Cordless Drill 18V",
   "category": "Power Tools",
   "price_clp": 49990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Cordless+Drill+18V",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22105%22%20y%3D%22105%22%20width%3D%22155%22%20height%3D%2262%22%20rx%3D%2216%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22150%2C165%20195%2C165%20183%2C238%20140%2C238%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22128%22%20y%3D%22238%22%20width%3D%2262%22%20height%3D%2220%22%20rx%3D%225%22%20fill%3D%22%23e8590c%22/%3E%3Crect%20x%3D%22258%22%20y%3D%22122%22%20width%3D%2240%22%20height%3D%2230%22%20rx%3D%224%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22298%22%20y%3D%22133%22%20width%3D%2256%22%20height%3D%228%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22115%22%20width%3D%2260%22%20height%3D%228%22%20rx%3D%224%22%20fill%3D%22%23e8590c%22/%3E%3Crect%20x%3D%22184%22%20y%3D%22150%22%20width%3D%2210%22%20height%3D%2218%22%20rx%3D%223%22%20fill%3D%22%23e8590c%22/%3E%3C/svg%3E",
   "description": "18V brushless drill with 2 batteries and case.",
   "tags": "taladro drill",
   "stock": {
@@ -29,7 +29,7 @@
   "name": "Jigsaw 650 W",
   "category": "Power Tools",
   "price_clp": 34990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Jigsaw+650+W",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22110%22%20y%3D%22100%22%20width%3D%22170%22%20height%3D%2266%22%20rx%3D%2218%22%20fill%3D%22%231d2733%22/%3E%3Cpath%20d%3D%22M130%20105%20Q200%2040%20270%20105%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%2214%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%22193%22%20y%3D%22166%22%20width%3D%2214%22%20height%3D%2276%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22/%3E%3Crect%20x%3D%22160%22%20y%3D%22164%22%20width%3D%2290%22%20height%3D%2212%22%20rx%3D%223%22%20fill%3D%22%239aa5b1%22/%3E%3Crect%20x%3D%22122%22%20y%3D%22122%22%20width%3D%2260%22%20height%3D%2210%22%20rx%3D%225%22%20fill%3D%22%23e8590c%22/%3E%3C/svg%3E",
   "description": "Variable-speed jigsaw for wood and metal.",
   "tags": "sierra caladora",
   "stock": {
@@ -54,7 +54,7 @@
   "name": "Circular Saw 7-1/4 in",
   "category": "Power Tools",
   "price_clp": 59990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Circular+Saw+7-1/4+in",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22160%22%20r%3D%2278%22%20fill%3D%22%23c9d1d8%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22160%22%20r%3D%2278%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%2210%22%20stroke-dasharray%3D%228%208%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22160%22%20r%3D%2216%22%20fill%3D%22%231d2733%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22160%22%20r%3D%226%22%20fill%3D%22%239aa5b1%22/%3E%3Cpath%20d%3D%22M122%20160%20A78%2078%200%200%201%20278%20160%20Z%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22178%22%20y%3D%2252%22%20width%3D%2244%22%20height%3D%2234%22%20rx%3D%2210%22%20fill%3D%22%23e8590c%22/%3E%3C/svg%3E",
   "description": "1500 W circular saw with cutting guide.",
   "tags": "sierra circular",
   "stock": {
@@ -79,7 +79,7 @@
   "name": "Angle Grinder 4-1/2 in",
   "category": "Power Tools",
   "price_clp": 27990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Angle+Grinder+4-1/2+in",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22105%22%20y%3D%22130%22%20width%3D%22150%22%20height%3D%2250%22%20rx%3D%2222%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22225%22%20y%3D%22138%22%20width%3D%2240%22%20height%3D%2234%22%20rx%3D%226%22%20fill%3D%22%23e8590c%22/%3E%3Cellipse%20cx%3D%22292%22%20cy%3D%22155%22%20rx%3D%2212%22%20ry%3D%2262%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22255%22%20y%3D%22148%22%20width%3D%2230%22%20height%3D%2214%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22178%22%20width%3D%2234%22%20height%3D%2258%22%20rx%3D%2212%22%20fill%3D%22%231d2733%22/%3E%3C/svg%3E",
   "description": "850 W angle grinder with guard.",
   "tags": "esmeril amoladora",
   "stock": {
@@ -104,7 +104,7 @@
   "name": "Screwdriver Set 6 pieces",
   "category": "Hand Tools",
   "price_clp": 12990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Screwdriver+Set+6+pieces",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cg%20transform%3D%22rotate%28-35%20200%20150%29%22%3E%3Crect%20x%3D%22185%22%20y%3D%2260%22%20width%3D%2230%22%20height%3D%2285%22%20rx%3D%2212%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22195%22%20y%3D%22145%22%20width%3D%2210%22%20height%3D%2275%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22/%3E%3Cpolygon%20points%3D%22195%2C220%20205%2C220%20200%2C240%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%280%20200%20150%29%22%3E%3Crect%20x%3D%22185%22%20y%3D%2260%22%20width%3D%2230%22%20height%3D%2285%22%20rx%3D%2212%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22195%22%20y%3D%22145%22%20width%3D%2210%22%20height%3D%2275%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22/%3E%3Cpolygon%20points%3D%22195%2C220%20205%2C220%20200%2C240%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%2835%20200%20150%29%22%3E%3Crect%20x%3D%22185%22%20y%3D%2260%22%20width%3D%2230%22%20height%3D%2285%22%20rx%3D%2212%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22195%22%20y%3D%22145%22%20width%3D%2210%22%20height%3D%2275%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22/%3E%3Cpolygon%20points%3D%22195%2C220%20205%2C220%20200%2C240%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3C/svg%3E",
   "description": "Phillips and flat screwdrivers with magnetic tips.",
   "tags": "destornillador",
   "stock": {
@@ -129,7 +129,7 @@
   "name": "Precision Screwdriver Kit",
   "category": "Hand Tools",
   "price_clp": 8990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Precision+Screwdriver+Kit",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cg%20transform%3D%22rotate%28-25%20200%20150%29%22%3E%3Crect%20x%3D%22185%22%20y%3D%2260%22%20width%3D%2230%22%20height%3D%2285%22%20rx%3D%2212%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22195%22%20y%3D%22145%22%20width%3D%2210%22%20height%3D%2275%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22/%3E%3Cpolygon%20points%3D%22195%2C220%20205%2C220%20200%2C240%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3Cg%20transform%3D%22rotate%2825%20200%20150%29%22%3E%3Crect%20x%3D%22185%22%20y%3D%2260%22%20width%3D%2230%22%20height%3D%2285%22%20rx%3D%2212%22%20fill%3D%22%231d2733%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22195%22%20y%3D%22145%22%20width%3D%2210%22%20height%3D%2275%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22/%3E%3Cpolygon%20points%3D%22195%2C220%20205%2C220%20200%2C240%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3C/svg%3E",
   "description": "24-bit precision kit for electronics and glasses.",
   "tags": "destornillador",
   "stock": {
@@ -154,7 +154,7 @@
   "name": "Claw Hammer 16 oz",
   "category": "Hand Tools",
   "price_clp": 9990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Claw+Hammer+16+oz",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cg%20transform%3D%22rotate%28-35%20200%20150%29%22%3E%3Crect%20x%3D%22185%22%20y%3D%2290%22%20width%3D%2230%22%20height%3D%22150%22%20rx%3D%2210%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22135%22%20y%3D%2272%22%20width%3D%22130%22%20height%3D%2238%22%20rx%3D%226%22%20fill%3D%22%231d2733%22/%3E%3Cpolygon%20points%3D%22135%2C72%20108%2C98%20135%2C110%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3C/svg%3E",
   "description": "Fiberglass handle claw hammer.",
   "tags": "martillo",
   "stock": {
@@ -179,7 +179,7 @@
   "name": "Tape Measure 5 m",
   "category": "Hand Tools",
   "price_clp": 4990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Tape+Measure+5+m",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22115%22%20y%3D%2295%22%20width%3D%22170%22%20height%3D%22110%22%20rx%3D%2226%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%2234%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%2210%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22250%22%20y%3D%22188%22%20width%3D%2290%22%20height%3D%2214%22%20rx%3D%220%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M262%20188%20L262%20196%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M278%20188%20L278%20196%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M294%20188%20L294%20196%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M310%20188%20L310%20196%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M326%20188%20L326%20196%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3C/svg%3E",
   "description": "5 m locking tape measure.",
   "tags": "huincha metro",
   "stock": {
@@ -204,7 +204,7 @@
   "name": "Adjustable Wrench 10 in",
   "category": "Hand Tools",
   "price_clp": 8990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Adjustable+Wrench+10+in",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cg%20transform%3D%22rotate%28-40%20200%20150%29%22%3E%3Crect%20x%3D%22185%22%20y%3D%2295%22%20width%3D%2230%22%20height%3D%22150%22%20rx%3D%2212%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%2295%22%20r%3D%2242%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22188%22%20y%3D%2248%22%20width%3D%2224%22%20height%3D%2250%22%20rx%3D%220%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22240%22%20r%3D%2212%22%20fill%3D%22%23ffc20e%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/g%3E%3C/svg%3E",
   "description": "Chrome vanadium adjustable wrench.",
   "tags": "llave inglesa",
   "stock": {
@@ -229,7 +229,7 @@
   "name": "Pliers Set 3 pieces",
   "category": "Hand Tools",
   "price_clp": 14990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Pliers+Set+3+pieces",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cpath%20d%3D%22M150%20245%20L190%20145%22%20fill%3D%22none%22%20stroke%3D%22%23e8590c%22%20stroke-width%3D%2222%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M250%20245%20L210%20145%22%20fill%3D%22none%22%20stroke%3D%22%23e8590c%22%20stroke-width%3D%2222%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M190%20145%20L184%2078%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%2218%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M210%20145%20L216%2078%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%2218%22%20stroke-linecap%3D%22round%22%20/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%2211%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/svg%3E",
   "description": "Combination, long-nose and cutting pliers.",
   "tags": "alicate",
   "stock": {
@@ -254,7 +254,7 @@
   "name": "Wood Screws, box of 200",
   "category": "Fasteners",
   "price_clp": 4990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Wood+Screws",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cg%20transform%3D%22translate%28140%2085%29%22%3E%3Crect%20x%3D%22-22%22%20y%3D%220%22%20width%3D%2244%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22-8%22%20y%3D%2212%22%20width%3D%2216%22%20height%3D%22100%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M-8%2028%20L8%2034%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2042%20L8%2048%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2056%20L8%2062%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2070%20L8%2076%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2084%20L8%2090%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2098%20L8%20104%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpolygon%20points%3D%22-8%2C112%208%2C112%200%2C132%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28200%2085%29%22%3E%3Crect%20x%3D%22-22%22%20y%3D%220%22%20width%3D%2244%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22-8%22%20y%3D%2212%22%20width%3D%2216%22%20height%3D%22100%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M-8%2028%20L8%2034%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2042%20L8%2048%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2056%20L8%2062%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2070%20L8%2076%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2084%20L8%2090%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2098%20L8%20104%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpolygon%20points%3D%22-8%2C112%208%2C112%200%2C132%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28260%2085%29%22%3E%3Crect%20x%3D%22-22%22%20y%3D%220%22%20width%3D%2244%22%20height%3D%2212%22%20rx%3D%224%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22-8%22%20y%3D%2212%22%20width%3D%2216%22%20height%3D%22100%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M-8%2028%20L8%2034%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2042%20L8%2048%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2056%20L8%2062%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2070%20L8%2076%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2084%20L8%2090%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-8%2098%20L8%20104%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpolygon%20points%3D%22-8%2C112%208%2C112%200%2C132%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3C/svg%3E",
   "description": "4x40 mm zinc-plated wood screws.",
   "tags": "tornillos",
   "stock": {
@@ -279,7 +279,7 @@
   "name": "Steel Nails 2 in, 1 kg",
   "category": "Fasteners",
   "price_clp": 3990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Steel+Nails+2+in",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cg%20transform%3D%22translate%28130%2080%29%20rotate%28-12%29%22%3E%3Crect%20x%3D%22-18%22%20y%3D%220%22%20width%3D%2236%22%20height%3D%229%22%20rx%3D%223%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22-3%22%20y%3D%229%22%20width%3D%226%22%20height%3D%22115%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpolygon%20points%3D%22-3%2C124%203%2C124%200%2C140%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28180%2080%29%20rotate%280%29%22%3E%3Crect%20x%3D%22-18%22%20y%3D%220%22%20width%3D%2236%22%20height%3D%229%22%20rx%3D%223%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22-3%22%20y%3D%229%22%20width%3D%226%22%20height%3D%22115%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpolygon%20points%3D%22-3%2C124%203%2C124%200%2C140%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28225%2080%29%20rotate%288%29%22%3E%3Crect%20x%3D%22-18%22%20y%3D%220%22%20width%3D%2236%22%20height%3D%229%22%20rx%3D%223%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22-3%22%20y%3D%229%22%20width%3D%226%22%20height%3D%22115%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpolygon%20points%3D%22-3%2C124%203%2C124%200%2C140%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28272%2080%29%20rotate%2818%29%22%3E%3Crect%20x%3D%22-18%22%20y%3D%220%22%20width%3D%2236%22%20height%3D%229%22%20rx%3D%223%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22-3%22%20y%3D%229%22%20width%3D%226%22%20height%3D%22115%22%20rx%3D%220%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpolygon%20points%3D%22-3%2C124%203%2C124%200%2C140%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3C/svg%3E",
   "description": "Common steel nails, 1 kg bag.",
   "tags": "clavos",
   "stock": {
@@ -304,7 +304,7 @@
   "name": "Wall Anchors, pack of 50",
   "category": "Fasteners",
   "price_clp": 5490,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Wall+Anchors",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cg%20transform%3D%22translate%28140%2085%29%22%3E%3Crect%20x%3D%22-16%22%20y%3D%2294%22%20width%3D%2232%22%20height%3D%2292%22%20rx%3D%2212%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M-16%20118%20L16%20118%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-16%20140%20L16%20140%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-16%20162%20L16%20162%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%22-24%22%20y%3D%2288%22%20width%3D%2248%22%20height%3D%2210%22%20rx%3D%223%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28200%2085%29%22%3E%3Crect%20x%3D%22-16%22%20y%3D%2294%22%20width%3D%2232%22%20height%3D%2292%22%20rx%3D%2212%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M-16%20118%20L16%20118%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-16%20140%20L16%20140%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-16%20162%20L16%20162%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%22-24%22%20y%3D%2288%22%20width%3D%2248%22%20height%3D%2210%22%20rx%3D%223%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3Cg%20transform%3D%22translate%28260%2085%29%22%3E%3Crect%20x%3D%22-16%22%20y%3D%2294%22%20width%3D%2232%22%20height%3D%2292%22%20rx%3D%2212%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M-16%20118%20L16%20118%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-16%20140%20L16%20140%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M-16%20162%20L16%20162%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%22-24%22%20y%3D%2288%22%20width%3D%2248%22%20height%3D%2210%22%20rx%3D%223%22%20fill%3D%22%231d2733%22/%3E%3C/g%3E%3C/svg%3E",
   "description": "Plastic wall anchors with screws.",
   "tags": "tarugos",
   "stock": {
@@ -329,7 +329,7 @@
   "name": "Interior Paint 4 L, white",
   "category": "Paint",
   "price_clp": 24990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Interior+Paint+4+L",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22125%22%20width%3D%22140%22%20height%3D%22115%22%20rx%3D%228%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22112%22%20width%3D%22160%22%20height%3D%2222%22%20rx%3D%226%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22130%22%20y%3D%22160%22%20width%3D%22140%22%20height%3D%2248%22%20rx%3D%220%22%20fill%3D%22%23e8590c%22/%3E%3Cpath%20d%3D%22M138%20120%20Q200%2040%20262%20120%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22184%22%20r%3D%2216%22%20fill%3D%22%23ffffff%22/%3E%3Cpath%20d%3D%22M150%20112%20q6%2014%2014%200%20q8%2018%2016%200%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20/%3E%3C/svg%3E",
   "description": "Washable matte white paint, 4 liters.",
   "tags": "pintura",
   "stock": {
@@ -354,7 +354,7 @@
   "name": "Paint Roller Kit",
   "category": "Paint",
   "price_clp": 9990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Paint+Roller+Kit",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22100%22%20y%3D%2288%22%20width%3D%22160%22%20height%3D%2254%22%20rx%3D%2224%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M260%20115%20L295%20115%20L295%20178%20L200%20178%20L200%20215%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22/%3E%3Crect%20x%3D%22186%22%20y%3D%22212%22%20width%3D%2228%22%20height%3D%2256%22%20rx%3D%2210%22%20fill%3D%22%231d2733%22/%3E%3C/svg%3E",
   "description": "Roller, tray and brush set.",
   "tags": "rodillo brocha",
   "stock": {
@@ -379,7 +379,7 @@
   "name": "Masking Tape 48 mm",
   "category": "Paint",
   "price_clp": 2990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Masking+Tape+48+mm",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%2282%22%20fill%3D%22%23eadfc3%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%225%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%2236%22%20fill%3D%22%23ffc20e%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%225%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%2282%22%20fill%3D%22none%22/%3E%3Cpath%20d%3D%22M282%20150%20L335%20150%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%220%22%20stroke-linecap%3D%22round%22%20/%3E%3C/svg%3E",
   "description": "Painter's masking tape, 40 m.",
   "tags": "cinta",
   "stock": {
@@ -404,7 +404,7 @@
   "name": "Plywood Sheet 18 mm",
   "category": "Lumber",
   "price_clp": 32990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Plywood+Sheet+18+mm",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22100%22%20y%3D%22190%22%20width%3D%22200%22%20height%3D%2222%22%20rx%3D%223%22%20fill%3D%22%23d9a066%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M115%20201%20L285%20201%22%20fill%3D%22none%22%20stroke%3D%22%23b9824a%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%22110%22%20y%3D%22164%22%20width%3D%22200%22%20height%3D%2222%22%20rx%3D%223%22%20fill%3D%22%23d9a066%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M125%20175%20L295%20175%22%20fill%3D%22none%22%20stroke%3D%22%23b9824a%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%22120%22%20y%3D%22138%22%20width%3D%22200%22%20height%3D%2222%22%20rx%3D%223%22%20fill%3D%22%23d9a066%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M135%20149%20L305%20149%22%20fill%3D%22none%22%20stroke%3D%22%23b9824a%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20/%3E%3C/svg%3E",
   "description": "1.22 x 2.44 m pine plywood sheet.",
   "tags": "terciado madera",
   "stock": {
@@ -433,7 +433,7 @@
   "name": "Pine Board 2x4 in, 3 m",
   "category": "Lumber",
   "price_clp": 6990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Pine+Board+2x4+in",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cg%20transform%3D%22rotate%28-18%20200%20150%29%22%3E%3Crect%20x%3D%2270%22%20y%3D%22132%22%20width%3D%22260%22%20height%3D%2236%22%20rx%3D%224%22%20fill%3D%22%23d9a066%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M85%20150%20L315%20150%22%20fill%3D%22none%22%20stroke%3D%22%23b9824a%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%2270%22%20y%3D%22132%22%20width%3D%2224%22%20height%3D%2236%22%20rx%3D%224%22%20fill%3D%22%23c58b52%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/g%3E%3C/svg%3E",
   "description": "Dried pine board, 3 m long.",
   "tags": "madera pino",
   "stock": {
@@ -460,7 +460,7 @@
   "name": "Gas Cylinder 15 kg",
   "category": "Gas",
   "price_clp": 28990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Gas+Cylinder+15+kg",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22150%22%20y%3D%22100%22%20width%3D%22100%22%20height%3D%22150%22%20rx%3D%2242%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22176%22%20y%3D%2292%22%20width%3D%2248%22%20height%3D%2214%22%20rx%3D%223%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22186%22%20y%3D%2264%22%20width%3D%2228%22%20height%3D%2230%22%20rx%3D%226%22%20fill%3D%22%231d2733%22/%3E%3Cpath%20d%3D%22M170%2068%20L230%2068%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%22150%22%20y%3D%22165%22%20width%3D%22100%22%20height%3D%2226%22%20rx%3D%220%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%22150%22%20y%3D%22165%22%20width%3D%22100%22%20height%3D%2226%22%20rx%3D%220%22%20fill%3D%22none%22/%3E%3C/svg%3E",
   "description": "Refilled liquefied gas cylinder, 15 kg.",
   "tags": "gas balon",
   "stock": {
@@ -487,7 +487,7 @@
   "name": "Electric Water Heater 50 L",
   "category": "Plumbing",
   "price_clp": 139990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Electric+Water+Heater+50+L",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22140%22%20y%3D%2255%22%20width%3D%22120%22%20height%3D%22185%22%20rx%3D%2222%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22166%22%20y%3D%2298%22%20width%3D%2268%22%20height%3D%2226%22%20rx%3D%226%22%20fill%3D%22%23e8590c%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22160%22%20r%3D%2214%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22166%22%20y%3D%22240%22%20width%3D%2216%22%20height%3D%2226%22%20rx%3D%223%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22218%22%20y%3D%22240%22%20width%3D%2216%22%20height%3D%2226%22%20rx%3D%223%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22168%22%20y%3D%2278%22%20width%3D%2264%22%20height%3D%228%22%20rx%3D%223%22%20fill%3D%22%239aa5b1%22/%3E%3C/svg%3E",
   "description": "50 L electric water heater, 2000 W.",
   "tags": "calefont termo",
   "stock": {
@@ -515,7 +515,7 @@
   "name": "Kitchen Faucet, chrome",
   "category": "Plumbing",
   "price_clp": 39990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Kitchen+Faucet",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22155%22%20y%3D%22205%22%20width%3D%2290%22%20height%3D%2228%22%20rx%3D%226%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M200%20205%20L200%20125%20Q200%2082%20250%2082%20L288%2082%22%20fill%3D%22none%22%20stroke%3D%22%239aa5b1%22%20stroke-width%3D%2228%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M200%20205%20L200%20125%20Q200%2082%20250%2082%20L288%2082%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%220%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%22178%22%20y%3D%22100%22%20width%3D%2244%22%20height%3D%2212%22%20rx%3D%225%22%20fill%3D%22%231d2733%22/%3E%3Ccircle%20cx%3D%22288%22%20cy%3D%22122%22%20r%3D%227%22%20fill%3D%22%232f80ed%22/%3E%3Ccircle%20cx%3D%22288%22%20cy%3D%22152%22%20r%3D%227%22%20fill%3D%22%232f80ed%22/%3E%3Ccircle%20cx%3D%22288%22%20cy%3D%22182%22%20r%3D%227%22%20fill%3D%22%232f80ed%22/%3E%3C/svg%3E",
   "description": "Single-lever chrome kitchen faucet.",
   "tags": "llave grifo",
   "stock": {
@@ -540,7 +540,7 @@
   "name": "LED Bulbs 10 W, pack of 4",
   "category": "Electrical",
   "price_clp": 7990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=LED+Bulbs+10+W",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22125%22%20r%3D%2262%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M178%20175%20L178%20130%20L200%20108%20L222%20130%20L222%20175%22%20fill%3D%22none%22%20stroke%3D%22%23e8590c%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%22172%22%20y%3D%22182%22%20width%3D%2256%22%20height%3D%2248%22%20rx%3D%228%22%20fill%3D%22%239aa5b1%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cpath%20d%3D%22M172%20198%20L228%20198%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M172%20212%20L228%20212%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%22184%22%20y%3D%22230%22%20width%3D%2232%22%20height%3D%2212%22%20rx%3D%225%22%20fill%3D%22%231d2733%22/%3E%3C/svg%3E",
   "description": "Warm white E27 LED bulbs.",
   "tags": "ampolleta",
   "stock": {
@@ -565,7 +565,7 @@
   "name": "Extension Cord 5 m",
   "category": "Electrical",
   "price_clp": 6990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Extension+Cord+5+m",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%2295%22%20y%3D%22118%22%20width%3D%22200%22%20height%3D%2262%22%20rx%3D%2214%22%20fill%3D%22%23ffffff%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22120%22%20y%3D%22136%22%20width%3D%2238%22%20height%3D%2226%22%20rx%3D%226%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22178%22%20y%3D%22136%22%20width%3D%2238%22%20height%3D%2226%22%20rx%3D%226%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%22236%22%20y%3D%22136%22%20width%3D%2238%22%20height%3D%2226%22%20rx%3D%226%22%20fill%3D%22%231d2733%22/%3E%3Cpath%20d%3D%22M295%20150%20Q350%20150%20335%20215%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20/%3E%3Crect%20x%3D%22318%22%20y%3D%22212%22%20width%3D%2236%22%20height%3D%2236%22%20rx%3D%226%22%20fill%3D%22%231d2733%22/%3E%3C/svg%3E",
   "description": "3-outlet extension cord, 5 m.",
   "tags": "alargador",
   "stock": {
@@ -590,7 +590,7 @@
   "name": "Garden Hose 15 m",
   "category": "Garden",
   "price_clp": 17990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Garden+Hose+15+m",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%2282%22%20fill%3D%22none%22%20stroke%3D%22%232b8a3e%22%20stroke-width%3D%2216%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%2258%22%20fill%3D%22none%22%20stroke%3D%22%232b8a3e%22%20stroke-width%3D%2216%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%2234%22%20fill%3D%22none%22%20stroke%3D%22%232b8a3e%22%20stroke-width%3D%2216%22/%3E%3Crect%20x%3D%22278%22%20y%3D%22200%22%20width%3D%2270%22%20height%3D%2222%22%20rx%3D%226%22%20fill%3D%22%231d2733%22/%3E%3Cpath%20d%3D%22M270%20211%20L282%20211%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20/%3E%3Ccircle%20cx%3D%22190%22%20cy%3D%22150%22%20r%3D%226%22%20fill%3D%22%231d2733%22/%3E%3C/svg%3E",
   "description": "Reinforced garden hose with sprayer.",
   "tags": "manguera",
   "stock": {
@@ -615,7 +615,7 @@
   "name": "Wheelbarrow 90 L",
   "category": "Garden",
   "price_clp": 44990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Wheelbarrow+90+L",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Cpolygon%20points%3D%22105%2C115%20275%2C115%20245%2C190%20140%2C190%22%20fill%3D%22%23e8590c%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%225%22/%3E%3Cpath%20d%3D%22M105%20128%20L62%20232%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M150%20190%20L128%20245%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20/%3E%3Cpath%20d%3D%22M240%20190%20L262%20245%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20/%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22215%22%20r%3D%2230%22%20fill%3D%22%231d2733%22/%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22215%22%20r%3D%2210%22%20fill%3D%22%239aa5b1%22/%3E%3Cpath%20d%3D%22M268%20190%20L300%20215%22%20fill%3D%22none%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%226%22%20stroke-linecap%3D%22round%22%20/%3E%3C/svg%3E",
   "description": "Steel wheelbarrow, 90 L.",
   "tags": "carretilla",
   "stock": {
@@ -643,7 +643,7 @@
   "name": "Work Gloves, leather",
   "category": "Safety",
   "price_clp": 5990,
-  "image_url": "https://placehold.co/400x300/ffc20e/1d2733?text=Work+Gloves",
+  "image_url": "data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20300%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23ffc20e%22/%3E%3Ccircle%20cx%3D%22200%22%20cy%3D%22150%22%20r%3D%22112%22%20fill%3D%22%23ffd34d%22/%3E%3Crect%20x%3D%22145%22%20y%3D%22104%22%20width%3D%2224%22%20height%3D%2286%22%20rx%3D%2211%22%20fill%3D%22%23b5651d%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22172%22%20y%3D%2288%22%20width%3D%2224%22%20height%3D%22102%22%20rx%3D%2211%22%20fill%3D%22%23b5651d%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22199%22%20y%3D%2282%22%20width%3D%2224%22%20height%3D%22108%22%20rx%3D%2211%22%20fill%3D%22%23b5651d%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22226%22%20y%3D%2296%22%20width%3D%2224%22%20height%3D%2294%22%20rx%3D%2211%22%20fill%3D%22%23b5651d%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Crect%20x%3D%22140%22%20y%3D%22150%22%20width%3D%22116%22%20height%3D%2292%22%20rx%3D%2222%22%20fill%3D%22%23b5651d%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3Cg%20transform%3D%22rotate%280%20200%20150%29%22%3E%3C/g%3E%3Cg%20transform%3D%22rotate%28-35%20150%20210%29%22%3E%3Crect%20x%3D%22100%22%20y%3D%22196%22%20width%3D%2260%22%20height%3D%2226%22%20rx%3D%2212%22%20fill%3D%22%23b5651d%22%20stroke%3D%22%231d2733%22%20stroke-width%3D%224%22/%3E%3C/g%3E%3Crect%20x%3D%22146%22%20y%3D%22238%22%20width%3D%22104%22%20height%3D%2230%22%20rx%3D%226%22%20fill%3D%22%231d2733%22/%3E%3C/svg%3E",
   "description": "Leather work gloves, size L.",
   "tags": "guantes",
   "stock": {
