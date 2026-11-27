@@ -32,6 +32,10 @@ button{font:inherit;cursor:pointer}
 .small{font-size:12px;color:var(--muted)}
 .btn.rm{background:#f03e3e;padding:4px 9px;font-size:11px}
 .line{align-items:center}
+a.btn{text-decoration:none;display:inline-block}
+.payp{background:#faf9f6;border:1px solid var(--line);border-radius:8px;padding:10px;margin:8px 0}
+.payp input{margin:4px 0 8px}
+.pay-ok{background:#e6f4ea;border:1px solid var(--green);border-radius:8px;padding:10px;margin:8px 0;font-size:14px}
 .acts{display:flex;gap:6px;margin-top:8px}
 .btn.sm{padding:7px 10px;font-size:12px}
 .tag{display:inline-block;font-size:11px;background:#fff3cd;border:1px solid var(--yellow);border-radius:4px;padding:1px 5px;margin:2px 3px 0 0}
@@ -94,10 +98,10 @@ const img = t => "https://placehold.co/400x300/ffc20e/1d2733?text=" + encodeURIC
 let PRODUCTS = [];
 
 /* ====== STATE ====== */
-const state = { mode: "remote", branch_id: "", lat: -33.38, lng: -70.55, cart: [], order: null };
+const state = { mode: "remote", branch_id: "", lat: -33.38, lng: -70.55, cart: [], order: null, address: "Av. Providencia 1234, Providencia" };
 const LS = "sodibud_v1";
 let orders = [], lastTalk = [], prevTalk = [];
-function save() { try { localStorage.setItem(LS, JSON.stringify({ cart: state.cart, order: state.order, loc: $("loc").value, orders, lastTalk })); } catch (e) {} }
+function save() { try { localStorage.setItem(LS, JSON.stringify({ cart: state.cart, order: state.order, loc: $("loc").value, orders, lastTalk, address: state.address })); } catch (e) {} }
 function loadSaved() { try { return JSON.parse(localStorage.getItem(LS) || "null"); } catch (e) { return null; } }
 const $ = id => document.getElementById(id);
 const clp = n => "$" + n.toLocaleString("es-CL");
@@ -111,11 +115,13 @@ function distKm(a, b) {
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(rad(a.lat)) * Math.cos(rad(b.lat)) * Math.sin(dLng / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(h));
 }
-function deliveryDate(days) {
+function dateAfter(days) {
   const d = new Date(); let left = days;
   while (left > 0) { d.setDate(d.getDate() + 1); if (d.getDay() !== 0) left--; }
-  return d.toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" });
+  return d;
 }
+function deliveryDate(days) { return dateAfter(days).toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric" }); }
+function isoDate(days) { const d = dateAfter(days); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); }
 function nearestBranch() {
   return Object.values(BRANCHES).map(b => ({ b, km: distKm(state, b) })).sort((x, y) => x.km - y.km)[0];
 }
@@ -136,6 +142,7 @@ function applyLocation() {
   finishLocation();
 }
 function finishLocation() {
+  state.wx = null;
   const n = nearestBranch();
   state.mode = n.km <= 0.15 ? "at_branch" : "remote";
   state.branch_id = n.b.id;
@@ -155,7 +162,7 @@ function renderProducts(list) {
       <div class="small">${esc(p.description)}</div>
       ${stockInfo(p)}
       ${p.restrictions.map(r => `<span class="tag bad">${esc(r)}</span>`).join("")}
-      <div class="acts"><button class="btn sm" data-add="${p.sku}" data-f="take_now">Take now</button><button class="btn sm" data-add="${p.sku}" data-f="${p.pickup_only ? "deliver_to_branch" : "deliver_home"}">${p.pickup_only ? "Pick up at branch" : "Deliver home"}</button></div>
+      <div class="acts"><button class="btn sm" data-add="${p.sku}" data-f="take_now">Take now</button><button class="btn sm" data-add="${p.sku}" data-f="${p.pickup_only ? "deliver_to_branch" : "deliver_home"}">${p.pickup_only ? "Pick up at branch" : "Deliver home"}</button></div>${state.dirTo && state.dirTo.sku === p.sku ? `<div class="acts"><a class="btn sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${state.dirTo.b.lat},${state.dirTo.b.lng}">Directions to ${esc(state.dirTo.b.name)}</a></div>` : ""}
       </div></div>`).join("") : `<p class="empty">No products found.</p>`;
 }
 function buildPlan() {
@@ -166,18 +173,57 @@ function buildPlan() {
     if (it.fulfillment === "take_now") { key = "now"; label = "Take now (picked by staff or by you)"; date = "Today"; }
     else if (it.fulfillment === "deliver_to_branch") { key = "branch" + p.ship_days; label = "Delivery to branch"; date = deliveryDate(p.ship_days); }
     else { key = "home" + p.ship_days + (p.restrictions.length ? "r" + p.sku : ""); label = "Home delivery"; date = deliveryDate(p.ship_days); fee = p.delivery_fee; }
-    batches[key] = batches[key] || { label, date, window: it.fulfillment === "deliver_home" ? "10:00 to 14:00" : "", fee: 0, items: [], refs: [], restrictions: [] };
+    batches[key] = batches[key] || { label, date, iso: it.fulfillment === "take_now" ? null : isoDate(p.ship_days), window: it.fulfillment === "deliver_home" ? "10:00 to 14:00" : "", fee: 0, items: [], refs: [], restrictions: [] };
     const b = batches[key];
     b.items.push(`${it.qty} x ${p.name}`); b.refs.push({ sku: it.sku, f: it.fulfillment });
     b.fee = Math.max(b.fee, fee);
     p.restrictions.forEach(r => { if (!b.restrictions.includes(r)) b.restrictions.push(r); });
   }
-  return Object.values(batches);
+  const list = Object.values(batches);
+  list.forEach(b => {
+    const d = b.iso && state.wx && state.wx[b.iso];
+    if (d) { b.forecast = `${d.rain}% chance of rain, high ${Math.round(d.max)} C`; if (d.rain >= 40) b.weather_note = `Rain forecast (${d.rain}%), delivery may shift one day`; }
+  });
+  return list;
 }
 function cartTotals() {
   const items = state.cart.reduce((s, it) => s + bySku(it.sku).price_clp * it.qty, 0);
   const fees = buildPlan().reduce((s, b) => s + b.fee, 0);
-  return { items, fees, total: items + fees };
+  const cash = state.cart.filter(i => i.fulfillment === "take_now").reduce((s, it) => s + bySku(it.sku).price_clp * it.qty, 0);
+  return { items, fees, cash, online: items - cash + fees, total: items + fees };
+}
+function recordOrder() {
+  orders.unshift({ id: state.order.id, date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" }), items: state.cart.map(i => `${i.qty} x ${bySku(i.sku).name}`) });
+  orders = orders.slice(0, 5);
+}
+function orderPanel(t) {
+  const o = state.order, hasDel = state.cart.some(i => i.fulfillment !== "take_now");
+  const head = `<div class="batch"><b>Order ${esc(o.id)}</b><div class="small">RUT ${esc(o.rut)}${o.paid ? (o.cash_only ? " · Pay at the register" : " · Paid") : " · Ready to pay"}</div></div>`;
+  if (o.paid) return head + (o.cash_only
+    ? `<div class="pay-ok">Nothing to pay online. Pay ${clp(t.cash)} in cash at the register and staff will hand you your products.</div>`
+    : `<div class="pay-ok">Payment received: ${clp(t.online)}.${t.cash ? ` Pay ${clp(t.cash)} at the register for the items you take now.` : ""}${hasDel ? ` Delivery to ${esc(state.address)}.` : ""}</div>`);
+  return head + `<div class="payp">
+    <div class="line"><span>Pay online now</span><b>${clp(t.online)}</b></div>
+    ${t.cash ? `<div class="line"><span>Pay at the register</span><b>${clp(t.cash)}</b></div>` : ""}
+    ${hasDel ? `<label class="small">Delivery address</label><input type="text" id="addr" value="${esc(state.address)}">` : ""}
+    <label class="small">Card number</label><input type="text" id="cnum" value="4242 4242 4242 4242" inputmode="numeric">
+    <div class="row"><input type="text" id="cexp" value="12/30" aria-label="Expiry"><input type="text" id="ccvc" value="123" aria-label="CVC"></div>
+    <input type="text" id="cname" value="Demo Customer" aria-label="Name on card">
+    <div class="small">Demo payment, no real charge.</div>
+    <button class="btn pay" id="paybtn">Pay ${clp(t.online)}</button></div>`;
+}
+function payNow() {
+  const t = cartTotals(), o = state.order, btn = $("paybtn");
+  if ((($("cnum").value || "").replace(/\D/g, "")).length < 13) { $("caption").textContent = "Enter a valid card number (demo: 4242 4242 4242 4242)."; return; }
+  btn.disabled = true; btn.textContent = "Processing…";
+  setTimeout(() => {
+    if (!state.order || state.order !== o) return;
+    o.paid = true; recordOrder();
+    const hasDel = state.cart.some(i => i.fulfillment !== "take_now");
+    alertStaff("Payment received - " + o.id, `${clp(t.online)} paid online` + (t.cash ? `, ${clp(t.cash)} due at the register` : "") + (hasDel ? `. Delivery to ${state.address.slice(0, 40)}` : ""), ["moneybag"]);
+    try { if (convo && convo.sendContextualUpdate) convo.sendContextualUpdate(`The customer paid ${clp(t.online)} online. Order ${o.id} is confirmed.` + (t.cash ? ` ${clp(t.cash)} is still due at the register.` : "")); } catch (e) {}
+    renderCart();
+  }, 1500);
 }
 function renderCart() {
   save();
@@ -187,24 +233,20 @@ function renderCart() {
     <div class="batch"><b>${esc(b.label)}</b> <span class="small">${esc(b.date)} ${esc(b.window)}</span>
       ${b.items.map((i, k) => `<div class="line"><span>${esc(i)}</span>${state.order && state.order.paid ? "" : `<button class="btn rm" data-rm="${b.refs[k].sku}" data-f="${b.refs[k].f}">Remove</button>`}</div>`).join("")}
       ${b.restrictions.map(r => `<span class="tag bad">${esc(r)}</span>`).join("")}
+      ${b.forecast ? `<div class="small">Forecast: ${esc(b.forecast)}</div>` : ""}
       ${b.fee ? `<div class="small">Delivery fee: ${clp(b.fee)}</div>` : ""}
     </div>`).join("");
-  const order = state.order ? `<div class="batch"><b>Order ${esc(state.order.id)}</b><div class="small">RUT ${esc(state.order.rut)}${state.order.paid ? " · Paid" : " · Ready to pay"}</div></div>
-    ${state.order.paid ? "" : `<button class="btn pay" id="paybtn">Pay ${clp(t.total)}</button>`}` : "";
+  const order = state.order ? orderPanel(t) : "";
   $("cart").innerHTML = batches +
     `<div class="line"><span>Items</span><span>${clp(t.items)}</span></div>
      <div class="line"><span>Delivery</span><span>${clp(t.fees)}</span></div>
      <div class="line total"><span>Total</span><span>${clp(t.total)}</span></div>` + order;
-  const pb = $("paybtn");
-  if (pb) pb.onclick = () => {
-    state.order.paid = true;
-    orders.unshift({ id: state.order.id, date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" }), items: state.cart.map(i => `${i.qty} x ${bySku(i.sku).name}`) });
-    orders = orders.slice(0, 5); renderCart();
-  };
+  const pb = $("paybtn"); if (pb) pb.onclick = payNow;
+  const ad = $("addr"); if (ad) ad.oninput = () => { state.address = ad.value; save(); };
 }
 function cartPayload() {
   const t = cartTotals();
-  return { cart_id: cartId(), items: state.cart, batches: buildPlan(), items_total_clp: t.items, delivery_fees_clp: t.fees, total_clp: t.total, order: state.order };
+  return { cart_id: cartId(), items: state.cart, batches: buildPlan(), items_total_clp: t.items, delivery_fees_clp: t.fees, total_clp: t.total, online_payment_clp: t.online, cash_at_register_clp: t.cash, delivery_address: state.address, order: state.order };
 }
 
 /* ====== RUT VALIDATION (modulo 11) ====== */
@@ -244,6 +286,19 @@ function removeItem(sku, fulfillment, qty) {
   state.order = null; renderCart();
   return { removed: `${n} x ${bySku(sku).name}`, cart: cartPayload() };
 }
+const NTFY_TOPIC = "1rlgZqwOEeJIOUmW";
+function alertStaff(title, message, tags) {
+  fetch("https://ntfy.sh/", { method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ topic: NTFY_TOPIC, title, message, tags: tags || ["package"], priority: 4 }) }).catch(() => {});
+}
+async function weatherFor() {
+  try {
+    const r = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${state.lat}&longitude=${state.lng}&daily=precipitation_probability_max,temperature_2m_max&timezone=auto&forecast_days=10`);
+    const j = await r.json(), out = {};
+    j.daily.time.forEach((t, i) => { out[t] = { rain: j.daily.precipitation_probability_max[i], max: j.daily.temperature_2m_max[i] }; });
+    return out;
+  } catch (e) { return null; }
+}
 const tools = {
   set_location: async ({ mode, branch_id }) => {
     if (mode === "at_branch") {
@@ -255,6 +310,7 @@ const tools = {
   },
   remove_from_cart: async ({ sku, qty, fulfillment }) => JSON.stringify(removeItem(sku, fulfillment, qty)),
   search_products: async ({ query, max_price, sort }) => {
+    state.dirTo = null;
     const list = searchLocal(query, max_price, sort);
     renderProducts(list);
     return JSON.stringify(list.map(p => ({ sku: p.sku, name: p.name, price_clp: p.price_clp, image_url: p.image_url, description: p.description,
@@ -263,16 +319,18 @@ const tools = {
   check_availability: async ({ sku, qty = 1 }) => {
     const p = bySku(sku);
     if (!p) return JSON.stringify({ error: "Unknown SKU" });
-    renderProducts([p]);
     const here = p.stock[state.branch_id] ?? 0;
-    const others = Object.values(BRANCHES).filter(b => b.id !== state.branch_id && p.stock[b.id] >= qty)
-      .map(b => ({ branch: b.name, units: p.stock[b.id], distance_km: +distKm(state, b).toFixed(1) }));
+    const alt = Object.values(BRANCHES).filter(b => b.id !== state.branch_id && p.stock[b.id] >= qty).sort((x, y) => distKm(state, x) - distKm(state, y));
+    const others = alt.map(b => ({ branch: b.name, units: p.stock[b.id], distance_km: +distKm(state, b).toFixed(1) }));
+    state.dirTo = here < qty && alt.length ? { sku, b: alt[0] } : null;
+    renderProducts([p]);
     return JSON.stringify({ sku, name: p.name, mode: state.mode, units_here: here, enough_here: here >= qty,
       aisle: p.aisle[state.branch_id], shelf: p.shelf[state.branch_id], other_branches_with_stock: others,
       earliest_delivery: p.pickup_only ? "Not deliverable" : deliveryDate(p.ship_days), delivery_fee_clp: p.delivery_fee,
-      restrictions: p.restrictions, pickup_only: p.pickup_only });
+      restrictions: p.restrictions, pickup_only: p.pickup_only, directions_shown: !!state.dirTo });
   },
   add_to_cart: async ({ sku, qty = 1, fulfillment = "take_now" }) => {
+    if (state.order && state.order.paid) { state.cart = []; state.order = null; }
     const p = bySku(sku);
     if (!p) return JSON.stringify({ error: "Unknown SKU" });
     if (fulfillment === "take_now") {
@@ -283,11 +341,14 @@ const tools = {
     if (fulfillment === "take_now") p.stock[state.branch_id] -= qty;
     const ex = state.cart.find(i => i.sku === sku && i.fulfillment === fulfillment);
     ex ? ex.qty += qty : state.cart.push({ sku, qty, fulfillment, branch: fulfillment === "take_now" ? state.branch_id : undefined });
+    if (fulfillment === "take_now") alertStaff("Pick order - " + BRANCHES[state.branch_id].name, `Pick ${qty} x ${p.name} - aisle ${p.aisle[state.branch_id]}, shelf ${p.shelf[state.branch_id]}`);
+    if (fulfillment !== "take_now" && !state.wx) weatherFor().then(w => { if (w) { state.wx = w; renderCart(); } });
     state.order = null; renderCart();
     return JSON.stringify({ added: `${qty} x ${p.name}`, staff_picking_started: fulfillment === "take_now", cart: cartPayload() });
   },
   get_delivery_plan: async () => {
     if (!state.cart.length) return JSON.stringify({ error: "Cart is empty" });
+    const w = await weatherFor(); if (w) state.wx = w;
     renderCart();
     return JSON.stringify({ batches: buildPlan(), total_clp: cartTotals().total });
   },
@@ -296,12 +357,20 @@ const tools = {
     const ok = validRut(rut);
     if (!ok) return JSON.stringify({ error: "Invalid RUT. Ask the customer to repeat it and read it back." });
     state.order = { id: "ORD-" + Math.floor(1000 + Math.random() * 9000), rut: ok, paid: false };
+    const t = cartTotals();
+    if (t.online === 0) {
+      state.order.paid = true; state.order.cash_only = true; recordOrder();
+      alertStaff("Cash order - " + BRANCHES[state.branch_id].name, `${state.order.id}: customer pays ${clp(t.cash)} at the register. Items are being picked.`, ["moneybag"]);
+      renderCart();
+      return JSON.stringify({ status: "pay_at_register", cash_at_register_clp: t.cash, cart: cartPayload() });
+    }
     renderCart();
-    return JSON.stringify({ status: "ready_to_pay", cart: cartPayload() });
+    return JSON.stringify({ status: "ready_to_pay_online", online_payment_clp: t.online, cash_at_register_clp: t.cash, delivery_address: state.address, cart: cartPayload() });
   },
   show_cart: async () => { renderCart(); return JSON.stringify(cartPayload()); },
   request_human_assistance: async ({ reason }) => {
     $("caption").textContent = "A Sodimac team member has been notified: " + reason;
+    alertStaff("Customer needs help - " + BRANCHES[state.branch_id].name, String(reason), ["bell"]);
     return JSON.stringify({ notified: true, eta: state.mode === "at_branch" ? "A staff member is coming to you." : "A phone agent will call you shortly." });
   }
 };
@@ -371,10 +440,11 @@ $("cart").onclick = e => {
   $("caption").textContent = r.error ? r.error : "Removed " + r.removed;
 };
 $("qbtn").onclick = () => tools.search_products({ query: $("q").value });
-try { PRODUCTS = await (await fetch("products.json")).json(); }
+try { PRODUCTS = await (await fetch("products.json?v=" + Date.now(), { cache: "no-store" })).json(); }
 catch (e) { $("caption").textContent = "Could not load products.json"; }
 const saved = loadSaved();
 if (saved) {
+  if (saved.address) state.address = saved.address;
   orders = saved.orders || []; lastTalk = saved.lastTalk || [];
   if (saved.order && saved.order.paid) { state.cart = []; state.order = null; }
   else { state.cart = (saved.cart || []).filter(i => bySku(i.sku)); state.order = saved.order || null; }
